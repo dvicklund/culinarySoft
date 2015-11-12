@@ -1,0 +1,32 @@
+{
+  "name": "culinary-soft",
+  "version": "0.1.0",
+  "description": "A utility for restaurants to order from vendors more easily",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvicklund/culinarySoft.git"
+  },
+  "keywords": [
+    "util",
+    "restaurant",
+    "food"
+  ],
+  "author": "David Vicklund <david@vicklund.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dvicklund/culinarySoft/issues"
+  },
+  "homepage": "https://github.com/dvicklund/culinarySoft#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.5"
+  }
+}
