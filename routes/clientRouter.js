@@ -1,11 +1,8 @@
-var mongoose = require("mongoose");
-var express = require('express');
 var Product = require(__dirname + "/../models/productModel");
 var handleError = require(__dirname + "/../lib/handleError");
 var bodyParser = require('body-parser');
+var express = require('express');
 var clientRouter = module.exports = exports = express.Router();
-var multer = require("multer");
-var upload = multer();
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 clientRouter.get('/product', function(req, res) {
