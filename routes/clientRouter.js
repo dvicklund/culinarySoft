@@ -4,6 +4,9 @@ var Product = require(__dirname + "/../models/productModel");
 var handleError = require(__dirname + "/../lib/handleError");
 var bodyParser = require('body-parser');
 var clientRouter = module.exports = exports = express.Router();
+var multer = require("multer");
+var upload = multer();
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 clientRouter.get('/product', function(req, res) {
   Product.find({}, function(err, data) {
@@ -12,15 +15,18 @@ clientRouter.get('/product', function(req, res) {
   });
 });
 
-clientRouter.post('/product', bodyParser.json(), function(req, res) {
-  new Product({
-    name: req.body.name,
+clientRouter.post('/product', urlencodedParser, function(req, res) {
+  var newProduct = new Product({
+    name: req.body.productName,
     pricePerUnit: req.body.pricePerUnit,
     unit: req.body.unit,
     description: req.body.description
-
-  }).save(function(err, doc) {
-    if(err) handleError(err, res);
-    res.send('Success!');
   });
+  newProduct.save(function(err, data) {
+    if(err) return handleError(err);
+    res.json(data);
+  });
+
+  res.end(JSON.stringify(res));
+
 });
