@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var clientRouter = require(__dirname + "/routes/clientRouter");
+var vendorRouter = require(__dirname + "/routes/vendorRouter");
 var bodyParser = require('body-parser');
 var multer = require('multer');
 
