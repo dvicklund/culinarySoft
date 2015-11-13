@@ -23,5 +23,4 @@ clientRouter.post('/product', urlencodedParser, function(req, res) {
     if(err) return handleError(err);
     res.json(data);
   });
-  res.end(JSON.stringify(res));
 });
