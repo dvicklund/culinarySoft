@@ -8,7 +8,8 @@ var multer = require('multer');
 mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/productdb");
 
 app.use(express.static('public'));
-app.use('/api', clientRouter);
+app.use('/client', clientRouter);
+app.use('/vendor', vendorRouter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(multer);
