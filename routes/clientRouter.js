@@ -12,6 +12,17 @@ clientRouter.get('/product', function(req, res) {
   });
 });
 
+clientRouter.get('/product', function(req, res) {
+  $(document).ready(function() {
+    $("button").click(function() {
+      Product.findOne({name: userInput}, function(err, data) {
+        if(err) handleError(err, res);
+        res.json(data);
+      });
+    });
+  });
+});
+
 clientRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({
     name: req.body.productName,
