@@ -12,9 +12,9 @@ clientRouter.get('/product', function(req, res) {
   });
 });
 
-clientRouter.get('/product', function(req, res) {
+clientRouter.get('/client', function(req, res) {
   $(document).ready(function() {
-    $("button").click(function() {
+    $("#search").click(function() {
       var userInput = $(this).val();
       Product.findOne({name: userInput}, function(err, data) {
         if(err) handleError(err, res);
