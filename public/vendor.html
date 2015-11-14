@@ -6,26 +6,53 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>CulinarySoft</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
   <body>
-    <!--[if lt IE 7]>
+      <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <![endif]-->
     <header>
-      <h1>Welcome to CulinarySoft!</h1>
-      <h2>Where Chefs' Dreams Come True</h2>
+      <h1>CulinarySoft</h1>
+      <h2>A leader for over 2 days</h2>
+      <nav>
+        <a href="#">Vendor Lists</a>
+        <a href="#">My Lists</a>
+        <a href="#">My Orders</a>
+        <a href="#">My Account</a>
+      </nav>
     </header>
-<<<<<<< HEAD
     <br>
-    <form action="/vendor/product" method="POST">
-      <label for="productName">Product Name</label>
-      <input id="newProductName" type="text" name="productName" value=name><br>
+    <script>
+    var $form = $('#newProductForm');
+      // Attach a submit handler to the form
+      $form.submit(function(event) {
+       
+        // Stop form from submitting normally
+        event.preventDefault();
+       
+        // Get some values from elements on the page:
+          // term = $form.find( "input[name='name']" ).val(),
+          // url = $form.attr( "action" );
+        console.log(this.serialize());   
+        // // Send the data using post
+        // var posting = $.post( url, { s: term } );
+       
+        // // Put the results in a div
+        // posting.done(function( data ) {
+        //   var content = $( data ).find( "#content" );
+        //   $( "#result" ).empty().append( content );
+        // });
+      });
+    </script>
+    <form id="newProductForm" action="/vendor/product" method="POST">
+      <label for="name">Product Name</label>
+      <input id="newProductName" type="text" name="name" value=name><br>
       <label for="pricePerUnit">Price Per Unit</label>
       <input id="newPricePerUnit" type="number" step="any" name="pricePerUnit" value=pricePerUnit><br>
       <label for="unit">Unit</label>
@@ -34,20 +61,8 @@
       <input id="descriptionField" type="text" name="description" value=description><br>
       <input type="submit" value="Save">
     </form>
-
     <form action="/vendor/product" method="GET">
       <button type='submit'>Get stuff</button>
     </form>
-    <form method="post">
-   <input type="text" size="80" name="query"></textarea>
-   <input type="submit" value="Search" class="submitButton">
-</form>
-=======
-    <section id="splitLogin">
-      <p>Are you a vendor or a purchaser?</p>
-      <a href="./vendor.html" class="buttonLink">Vendor</a>
-      <a href="./client.html" class="buttonLink">Purchaser</a>
-    </section>
->>>>>>> 80218ed4d860a4c675bbb2462a61fc4984bb53fc
   </body>
 </html>

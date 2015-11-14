@@ -34,5 +34,9 @@ clientRouter.post('/product', urlencodedParser, function(req, res) {
     if(err) return handleError(err);
     res.json(data);
   });
+<<<<<<< HEAD
   res.end(JSON.stringify(res));
 });
+=======
+});
+>>>>>>> 80218ed4d860a4c675bbb2462a61fc4984bb53fc
