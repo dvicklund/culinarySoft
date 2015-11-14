@@ -2,7 +2,7 @@
   background-color: lightgray;
   color: darkblue; 
 }
-
+/*Thanks for this button goes to http://usabilitypost.com/2012/01/10/pressed-button-state-with-css3/*/
 .buttonLink {
   padding: 10px 15px;
   background-color: #4479BA;
@@ -15,7 +15,13 @@ a {
 
 #splitLogin {
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0;
 }
