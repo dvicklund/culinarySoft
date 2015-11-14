@@ -6,23 +6,20 @@ var clientRouter = module.exports = exports = express.Router();
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 clientRouter.get('/product', function(req, res) {
-  Product.find({}, function(err, data) {
+  Product.find({name: 1}, function(err, data) {
     if(err) handleError(err, res);
     res.json(data);
   });
 });
 
-clientRouter.get('/client', function(req, res) {
-  $(document).ready(function() {
-    $("#search").click(function() {
-      var userInput = $(this).val();
-      Product.findOne({name: userInput}, function(err, data) {
-        if(err) handleError(err, res);
-        res.json(data);
-      });
-    });
-  });
-});
+// clientRouter.post('/product', urlencodedParser, function(req, res) {
+
+//   Product.findOne({name: req.body.}, function(err, data) {
+//     if(err) handleError(err, res);
+//     res.json(data);
+//   });
+// });
+
 
 clientRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({

@@ -11,31 +11,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <script>
-    $(document).ready(function()
-{
+    var $form = $('#search').val();
+      // Attach a submit handler to the form
+      $form.submit(function(event) {
 
-    // handle button clicks
-    $('#search').click(function() {
+        // Stop form from submitting normally
+        event.preventDefault();
 
-        // make an ajax call
-        $.ajax({
-            dataType: 'jsonp',
-            jsonpCallback: '_wrapper',
-            data: $('#search').serialize(),
-            type: 'POST',
-            url: "./client",
-            success: handleButtonResponse,
-            });
-    });
+        // Get some values from elements on the page:
+          // term = $form.find( "input[name='name']" ).val(),
+          // url = $form.attr( "action" );
+        this.serialize();
+        // // Send the data using post
+        // var posting = $.post( url, { s: term } );
 
-    function handleButtonResponse(data)
-    {
-        // parse the json string
-        var jsonObject = JSON.parse(data);
-        $('#reponseID').append( jsonObject.message );
-    }
-
-});
+        // // Put the results in a div
+        // posting.done(function( data ) {
+        //   var content = $( data ).find( "#content" );
+        //   $( "#result" ).empty().append( content );
+        // });
+      });
     </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
