@@ -16,6 +16,4 @@ $(function() {
   }).done(function(data) {
     // TODO: add success message
   });
-  // $('#showList').click(function(event) {
-  // });    
 });

@@ -22,6 +22,6 @@ vendorRouter.post('/product', urlencodedParser, function(req, res) {
   });
   newProduct.save(function(err, data) {
     if(err) return handleError(err);
-    res.end();
+    res.redirect('/../vendor.html');
   });
 });
