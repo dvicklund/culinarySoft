@@ -27,7 +27,8 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "mongoose": "^4.2.5"
+    "mongoose": "^4.2.5",
+    "numeral": "^1.5.3"
   },
   "devDependencies": {
     "chai": "^3.4.1",
@@ -35,6 +36,8 @@
     "mocha": "^2.3.3"
   },
   "engines": {
-    "node": "5.0.0"
+    "5.*",
+    "4.*",
+    "node": "3.*"
   }
 }
