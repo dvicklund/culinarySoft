@@ -5,23 +5,14 @@ var express = require('express');
 var clientRouter = module.exports = exports = express.Router();
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
-clientRouter.get('/product', function(req, res) {
-  Product.find({name: 1}, function(err, data) {
+clientRouter.get('/products', function(req, res) {
+  Product.find({}, function(err, data) {
     if(err) handleError(err, res);
     res.json(data);
   });
 });
 
-// clientRouter.post('/product', urlencodedParser, function(req, res) {
-
-//   Product.findOne({name: req.body.}, function(err, data) {
-//     if(err) handleError(err, res);
-//     res.json(data);
-//   });
-// });
-
-
-clientRouter.post('/product', urlencodedParser, function(req, res) {
+clientRouter.post('/products', urlencodedParser, function(req, res) {
   var newProduct = new Product({
     name: req.body.productName,
     pricePerUnit: req.body.pricePerUnit,
