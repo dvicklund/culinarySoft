@@ -4,13 +4,9 @@
 
 html {
   height: 100%;
-
-    /* The old syntax, deprecated and prefixed, for old browsers */
   background: -prefix-linear-gradient(top, white, darkgrey); 
-
-  /* The new syntax needed by standard-compliant browsers (Opera 12.1,
-     IE 10, Firefox 16, Chrome 26, Safari 6.1), without prefix */
   background: linear-gradient(to bottom, white, darkgrey);
+background-attachment: fixed;
 }
 
 .buttonLink {
@@ -38,4 +34,8 @@ a:hover {
 section h1 {
   font-size: 2em;
   margin-bottom: -3%;
+}
+
+#newProductForm {
+  width: 90;
 }

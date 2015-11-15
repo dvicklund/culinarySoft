@@ -10,10 +10,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
   <body>
+  <script type="text/javascript" src="./populateHtml.js" async></script>
       <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -30,28 +31,47 @@
     <br>
 
     <form id="newProductForm" action="/vendor/product" method="POST">
-      <table id="formTable">
-        <tr>
-          <td><label for="name">Product Name</label></td>
-          <td><input id="newProductName" type="text" name="name"></td>
-        </tr>
-        <tr>
-          <td><label for="pricePerUnit">Price Per Unit</label></td>
-          <td><input id="newPricePerUnit" type="number" step="any" name="pricePerUnit"></td>
-        </tr>
-        <tr>
-          <td><label for="unit">Unit</label></td>
-          <td><input id="unitField" type="text" name="unit"></td>
-        </tr>
-        <tr>
-          <td><label for="description">Description</label></td>
-          <td><input id="descriptionField" type="text" name="description"></td>
-        </tr>
-      </table>
-      <input type="submit" value="Save">
+      <legend>Add a new product</legend>
+        <fieldset>
+          <table id="formTable">
+            <tr>
+              <td><label for="name">Product Name</label></td>
+              <td><input id="newProductName" type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td><label for="pricePerUnit">Price Per Unit</label></td>
+              <td><input id="newPricePerUnit" type="number" step="any" name="pricePerUnit"></td>
+            </tr>
+            <tr>
+              <td><label for="unit">Unit</label></td>
+              <td><input id="unitField" type="text" name="unit"></td>
+            </tr>
+            <tr>
+              <td><label for="description">Description</label></td>
+              <td><input id="descriptionField" type="text" name="description"></td>
+            </tr>
+            <tr>
+              <td><label for="UPN">UPN</label></td> 
+              <td><input id="UPN" type="text" name="UPN"></td>
+            </tr>
+          </table>
+        <input type="submit" value="Save"><p id="savedMessage"></p>
+      </fieldset>
     </form>
-    <form action="/vendor/product" method="GET">
-      <button type='submit'>Get stuff</button>
-    </form>
+    <table id="listTable">
+      <thead>
+        <tr>
+          <th colspan="5">Product List</th>
+        </tr>
+        <tr id="listHeaders">
+          <th>Name</th>
+          <th>Price/Unit</th>
+          <th>Unit</th>
+          <th>Description</th>
+          <th>UPN</th>
+        </tr>
+      </thead>
+      <tbody id="listBody"></tbody>
+    </table>
   </body>
 </html>
