@@ -6,7 +6,7 @@ html {
   height: 100%;
   background: -prefix-linear-gradient(top, white, darkgrey); 
   background: linear-gradient(to bottom, white, darkgrey);
-background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 .buttonLink {

@@ -44,20 +44,44 @@ describe('vendor router', function() {
   it('should be able to add a product', function(done) {
     var productData = {name: 'test product'};
     chai.request('localhost:3000')
-      .post('/api/product')
+      .post('/vendor/product')
       .send(productData)
       .end(function(err, res) {
         expect(err).to.eql(null);
         expect(res.body.name).to.eql('test product');
         expect(res.body).to.have.property('_id');
+        done();
       });
   });
 
-/*  it('should be able to update a product', function() {
+  describe('tests which require a product in db', function() {
+    beforeEach(function(done) {
+      (new Product({name: 'test product'})).save(function(err, data) {
+        expect(err).to.eql(null);
+        this.product = data;
+        done();
+      }.bind(this));
+    });
 
+    it('should be able to update a product', function() {
+      chai.request('localhost:3000')
+        .patch('/vendor/product' + this.product._id)
+        .send({name: 'a different product name'})
+        .end(function(err, res) {
+          expect(err).to.eql(null);
+          expect(res.body.msg).to.eql('success!');
+          done();
+        })
+    });
+
+    it('should be able to remove a product', function() {
+      chai.request('localhost:3000')
+        .delete('vendor/product' + this.product._id)
+        .end(function(err, res) {
+          expect(err).to.eql(null);
+          expect(res.body.msg).to.eql('success!');
+          done();
+        });
+    });
   });
-
-  it('should be able to remove a product', function() {
-
-  });*/
 });
