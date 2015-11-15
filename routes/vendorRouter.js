@@ -14,13 +14,14 @@ vendorRouter.get('/product', function(req, res) {
 
 vendorRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({
-    name: req.body.productName,
+    name: req.body.name,
     pricePerUnit: req.body.pricePerUnit,
     unit: req.body.unit,
-    description: req.body.description
+    description: req.body.description,
+    UPN: req.body.UPN
   });
   newProduct.save(function(err, data) {
     if(err) return handleError(err);
-    res.json(data);
+    res.redirect('/../vendor.html');
   });
 });
