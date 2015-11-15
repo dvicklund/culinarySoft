@@ -39,3 +39,7 @@ section h1 {
 #newProductForm {
   width: 90;
 }
+
+#listBody td:nth-child(2) {
+  text-align: right;
+}
