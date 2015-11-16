@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CulinarySoft</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+  <body>
+  <script type="text/javascript" src="./populateHtml.js" async></script>
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <header>
+      <h1>CulinarySoft</h1>
+      <h2>A leader for over 2 days</h2>
+      <nav>
+        <a href="#">Vendor Lists</a> |
+        <a href="#">My Lists</a> |
+        <a href="#">My Orders</a> |
+        <a href="#">My Account</a>
+      </nav>
+    </header>
+    <br>
+
+    <form id="newProductForm" action="/vendor/product" method="POST">
+      <legend>Add a new product</legend>
+        <fieldset>
+          <table id="formTable">
+            <tr>
+              <td><label for="name">Product Name</label></td>
+              <td><input id="newProductName" type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td><label for="pricePerUnit">Price Per Unit</label></td>
+              <td><input id="newPricePerUnit" type="number" step="any" name="pricePerUnit"></td>
+            </tr>
+            <tr>
+              <td><label for="unit">Unit</label></td>
+              <td><input id="unitField" type="text" name="unit"></td>
+            </tr>
+            <tr>
+              <td><label for="description">Description</label></td>
+              <td><input id="descriptionField" type="text" name="description"></td>
+            </tr>
+            <tr>
+              <td><label for="UPN">UPN</label></td> 
+              <td><input id="UPN" type="text" name="UPN"></td>
+            </tr>
+          </table>
+        <input type="submit" value="Save"><p id="savedMessage"></p>
+      </fieldset>
+    </form>
+    <table id="listTable">
+      <thead>
+        <tr>
+          <th colspan="5">Product List</th>
+        </tr>
+        <tr id="listHeaders">
+          <th>Name</th>
+          <th>Price/Unit</th>
+          <th>Unit</th>
+          <th>Description</th>
+          <th>UPN</th>
+        </tr>
+      </thead>
+      <tbody id="listBody"></tbody>
+    </table>
+  </body>
+</html>
