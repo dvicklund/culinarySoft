@@ -18,9 +18,14 @@
         console.log($("#search").val());
         var search = $("#search").val();
         $.post("/client/products", {nameText: search}).done(function(data){
-
           $(".searchResult").html("<strong>" + data + "</strong>");
         });
+      });
+      $("#delete").click(function(e){
+        e.preventDefault();
+        console.log($("#remove").val());
+        var remove = $("#remove").val();
+        $.delete("/client/products", {nameText: remove}).done();
       });
     });
     </script>
@@ -48,10 +53,16 @@
     </section>
     <section>
       <form>
-        <input id="search" type="text" placeholder="Search"></input>
+        <input id="search" type="text" placeholder="Item Name"></input>
         <button type="submit">Search</button>
       </form>
       <p class="searchResult"></p>
+    </section>
+    <section>
+      <form>
+        <input id="remove" type="text" placeholder="Remove Item"></input>
+        <button id="delete" type="submit">Delete</button>
+      </form>
     </section>
   </body>
 </html>
