@@ -10,12 +10,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-     $("button[type='submit']").click(function(){
+    $(document).ready(function() {
+      $("button").click(function(e){
+        e.preventDefault();
+        console.log($("#search").val());
         var search = $("#search").val();
-        $.post("/product", {name: search}).done(function(data){
-          var returnObj = JSON.stringify(data);
-          returnObj = JSON.parse(returnObj);
+        $.post("/client/products", {nameText: search}).done(function(data){
+
+          $(".searchResult").html("<strong>" + data + "</strong>");
+        });
+      });
+    });
     </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -40,18 +47,13 @@
       </form>
     </section>
     <section>
-<<<<<<< HEAD
-      <form id="search" action="/client/products" method="GET">
-        <input type="text"/>
+      <form>
+        <input id="search" type="text" placeholder="Search"></input>
         <button type="submit">Search</button>
       </form>
+      <p class="searchResult"></p>
     </section>
-
-=======
-      <form id="search" action="/client/product" method="GET">
-        <input type="text" value="Search">
-      </form>
-    </section>
->>>>>>> 1659803359829a4848fd93d9a1489903c9c1a92f
+     <!-- scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
   </body>
 </html>
