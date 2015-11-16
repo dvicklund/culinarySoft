@@ -10,6 +10,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $("button").click(function(e){
+        e.preventDefault();
+        console.log($("#search").val());
+        var search = $("#search").val();
+        $.post("/client/products", {nameText: search}).done(function(data){
+
+          $(".searchResult").html("<strong>" + data + "</strong>");
+        });
+      });
+    });
+    </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
@@ -33,9 +47,11 @@
       </form>
     </section>
     <section>
-      <form id="search" action="/client/product" method="GET">
-        <input type="text" value="Search">
+      <form>
+        <input id="search" type="text" placeholder="Search"></input>
+        <button type="submit">Search</button>
       </form>
+      <p class="searchResult"></p>
     </section>
   </body>
 </html>
