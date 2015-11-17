@@ -20,8 +20,8 @@
   ],
   "author": "David Vicklund <david@vicklund.com>",
   "contributors": {
-    "Jack Sneed <>",
-    "David Park <>"
+    "Jack Sneed <sneed.jack@gmail.com>"
+    "David Park <dpark4657@gmail.com>"
   },
   "license": "MIT",
   "bugs": {
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/dvicklund/culinarySoft#readme",
   "dependencies": {
-    "bcrypt": "^0.8.5",
+    "bcrypt": "latest",
     "body-parser": "^1.14.1",
     "eat": "^0.1.1",
     "express": "^4.13.3",
@@ -38,9 +38,13 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-mocha": "^2.2.0",
     "mocha": "^2.3.3"
   },
   "engines": {
+    "node": "5.*",
     "node": "4.*"
   }
 }
