@@ -71,7 +71,7 @@ describe('vendor router', function() {
           expect(err).to.eql(null);
           expect(res.body.msg).to.eql('success!');
           done();
-        })
+        });
     });
 
     it('should be able to remove a product', function() {
