@@ -14,14 +14,13 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
     <script>
     var makeTable = function(thing) {
-      $headers = $("#listHeaders");
       $list = $(".searchResult");
       var htmlString = '';
 
       htmlString += '<tr><td>';
-      for(var j = 1; j < Object.keys(thing).length - 1; j++) {
-        j === 2 ? htmlString += numeral(Number(thing[Object.keys(thing)[j]])).format('$0,0.00') + ' /</td><td>'
-                : htmlString += thing[Object.keys(thing)[j]] + "</td><td>";
+      for(var j = 1; j < Array(thing).length - 1; j++) {
+        j === 2 ? htmlString += numeral(Number(thing[Array(thing)[j]])).format('$0,0.00') + ' /</td><td>'
+                : htmlString += thing[Array(thing)[j]] + "</td><td>";
       }
       htmlString += '</td></tr>';
 
