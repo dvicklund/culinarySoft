@@ -20,21 +20,8 @@ clientRouter.get('/products', function(req, res) {
   });
 });
 
-clientRouter.post('/products', urlencodedParser, function(req, res) {
-  var newProduct = new Product({
-    name: req.body.productName,
-    pricePerUnit: req.body.pricePerUnit,
-    unit: req.body.unit,
-    description: req.body.description
-  });
-  newProduct.save(function(err, data) {
-    if(err) return handleError(err);
-    res.json(data);
-  });
-});
-
-clientRouter.delete('/products', urlencodedParser, function(req, res) {
-  var nameText = req.body.nameText;
+clientRouter.delete('/products', bodyParser.json(), function(req, res) {
+  var nameText = req.body.remove;
   Product.remove({name: nameText}, function(err) {
     if (err) return handleError(err, res);
     res.send({msg: 'success!'});

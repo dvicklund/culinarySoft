@@ -25,7 +25,14 @@
         e.preventDefault();
         console.log($("#remove").val());
         var remove = $("#remove").val();
-        $.delete("/client/products", {nameText: remove}).done();
+        $.ajax({
+          url:("/client/products"),
+          method: 'delete',
+          data: {name: remove},
+          success:function(){
+          return "Item removed!";
+          }
+        });
       });
     });
     </script>
