@@ -20,8 +20,10 @@
   ],
   "author": "David Vicklund <david@vicklund.com>",
   "contributors": {
-    "Jack Sneed <sneed.jack@gmail.com>"
-    "David Park <dpark4657@gmail.com>"
+    "name": "Jack Sneed",
+    "email": "sneed.jack@gmail.com",
+    "name": "David Park",
+    "email": "dpark4657@gmail.com"
   },
   "license": "MIT",
   "bugs": {
