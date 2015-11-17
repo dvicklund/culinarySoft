@@ -9,7 +9,7 @@ clientRouter.post('/products', urlencodedParser, function(req, res) {
   var nameText = req.body.nameText;
   Product.find({name: nameText}, function(err, data) {
     if(err) handleError(err, res);
-    res.send(data.toString());
+    res.send(data);
   });
 });
 
