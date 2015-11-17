@@ -40,6 +40,6 @@ section h1 {
   width: 90;
 }
 
-#listBody td:nth-child(2) {
+#listBody td:nth-child(3) {
   text-align: right;
 }
