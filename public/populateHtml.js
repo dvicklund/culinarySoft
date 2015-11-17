@@ -16,6 +16,6 @@ $.get('/vendor/product', function(data) {
     counter++;
   });
   $list.append(htmlString);
-  
+
   $('#UPN').val(counter);
 });
