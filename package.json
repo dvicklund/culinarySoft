@@ -19,6 +19,10 @@
     "food"
   ],
   "author": "David Vicklund <david@vicklund.com>",
+  "contributors": {
+    "Jack Sneed <sneed.jack@gmail.com>"
+    "David Park <dpark4657@gmail.com>"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dvicklund/culinarySoft/issues"
@@ -40,6 +44,7 @@
     "mocha": "^2.3.3"
   },
   "engines": {
+    "node": "5.*",
     "node": "4.*"
   }
 }
