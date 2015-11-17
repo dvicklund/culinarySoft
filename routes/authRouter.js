@@ -1,7 +1,7 @@
 var express = require('express');
 var jsonParser = require('body-parser').json();
-var handleError = require(__dirname + '/../lib/handleError')
-var User = require(__dirname + '/../models/user');
+var handleError = require(__dirname + '/../lib/handleError');
+var User = require(__dirname + '/../models/userModel');
 
 var authRouter = module.exports = exports = express.Router();
 authRouter.post('/signup', jsonParser, function(req, res) {
