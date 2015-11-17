@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var vendorRouter = module.exports = exports = express.Router();
 var urlencodedParser = bodyParser.urlencoded({extended: false});
+var jsonParser = bodyParser.json();
 
 vendorRouter.get('/product', function(req, res) {
   Product.find({}, function(err, data) {
@@ -22,6 +23,13 @@ vendorRouter.post('/product', urlencodedParser, function(req, res) {
   });
   newProduct.save(function(err, data) {
     if(err) return handleError(err);
+    res.redirect('/../vendor.html');
+  });
+});
+
+vendorRouter.post('/product/:id', function(req, res) {
+  Product.findOneAndRemove({"_id": req.params.id}, function(err, data) {
+    if(err) handleError(err, res);
     res.redirect('/../vendor.html');
   });
 });
