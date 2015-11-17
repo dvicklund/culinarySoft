@@ -44,7 +44,20 @@
             </tr>
             <tr>
               <td><label for="unit">Unit</label></td>
-              <td><input id="unitField" type="text" name="unit"></td>
+              <td><select name="unit" id="unitSelect">
+                <optgroup label="By Weight">
+                  <option value="lb" selected>lb.</option>
+                  <option value="kg">kg.</option>
+                  <option value="oz">oz.</option>
+                  <option value="g">g.</option>
+                </optgroup>
+                <optgroup label="By Quantity">
+                  <option value="case">case</option>
+                  <option value="gross">gross</option>
+                  <option value="dozen">dozen</option>
+                  <option value="each">each</option>
+                </optgroup>
+              </select></td>
             </tr>
             <tr>
               <td><label for="description">Description</label></td>
@@ -61,12 +74,12 @@
     <table id="listTable">
       <thead>
         <tr>
-          <th colspan="5">Product List</th>
+          <th  id="tableTitle" colspan="42"><h3>Product List</h3></th>
         </tr>
         <tr id="listHeaders">
           <th></th>
           <th>Name</th>
-          <th>Price/Unit</th>
+          <th>Price /</th>
           <th>Unit</th>
           <th>Description</th>
           <th>UPN</th>

@@ -3,6 +3,7 @@ var htmlString = "";
 $.get('/vendor/product', function(data) {
   $headers = $("#listHeaders");
   $list = $("#listBody");
+  var counter = 1;
   var htmlString = '';
   data.forEach(function(curr, i, arr) {
     htmlString += '<tr id="' + curr._id + '">';
@@ -12,7 +13,9 @@ $.get('/vendor/product', function(data) {
               : htmlString += '<td>' + curr[Object.keys(curr)[j]] + '</td>';
     }
     htmlString += '</tr>';
+    counter++;
   });
   $list.append(htmlString);
+  
+  $('#UPN').val(counter);
 });
-

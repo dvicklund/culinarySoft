@@ -40,6 +40,26 @@ section h1 {
   width: 90;
 }
 
-#listBody td:nth-child(2) {
+#listTable {
+  width: 100%;
+}
+
+#listBody td:nth-child(3) {
   text-align: right;
+}
+
+#listHeaders th:nth-child(3) {
+  text-align: right;
+}
+
+#listBody td:nth-child(4) {
+  text-align: left;
+}
+
+#listHeaders th:nth-child(4) {
+  text-align: left;
+}
+
+#tableTitle h3 {
+  border-bottom: 1px dotted black;
 }
