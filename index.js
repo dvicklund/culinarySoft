@@ -3,7 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 var clientRouter = require(__dirname + "/routes/clientRouter");
 var vendorRouter = require(__dirname + "/routes/vendorRouter");
-var authRouter = require(__dirname + "/routes/auth_routes");
+var authRouter = require(__dirname + "/routes/authRouter");
 
 mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/productdb");
 
