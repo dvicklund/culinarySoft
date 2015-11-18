@@ -12,27 +12,16 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script type="text/javascript" src="./populateHtml.js" async></script>
     <script>
-    var makeTable = function(thing) {
-      $list = $(".searchResult");
-      var htmlString = '';
-
-      htmlString += '<tr><td>';
-      for(var j = 1; j < Array(thing).length - 1; j++) {
-        j === 2 ? htmlString += numeral(Number(thing[Array(thing)[j]])).format('$0,0.00') + ' /</td><td>'
-                : htmlString += thing[Array(thing)[j]] + "</td><td>";
-      }
-      htmlString += '</td></tr>';
-
-      $list.append(htmlString);
-    };
+    
     $(document).ready(function() {
       $("button").click(function(e){
         e.preventDefault();
         console.log($("#search").val());
         var search = $("#search").val();
         $.post("/client/products", {nameText: search}).done(function(data){
-          $(".searchResult").html("<strong>" + makeTable(data) + "</strong>");
+          $(".searchResult").html("<strong>" + data + "</strong>");
         });
       });
       $("#delete").click(function(e){
@@ -68,16 +57,27 @@
       </nav>
     </header>
     <section>
-      <form action="/client/products" method="GET">
-        <input type="submit" value="My List">
-      </form>
-    </section>
-    <section>
       <form>
         <input id="search" type="text" placeholder="Item Name"></input>
         <button type="submit">Search</button>
       </form>
-      <li class="searchResult"></li>
+      <table class="searchResult"></table>
     </section>
+    <table id="listTable">
+      <thead>
+        <tr>
+          <th  id="tableTitle" colspan="42"><h3>Product List</h3></th>
+        </tr>
+        <tr id="listHeaders">
+          <th></th>
+          <th>Name</th>
+          <th>Price /</th>
+          <th>Unit</th>
+          <th>Description</th>
+          <th>UPN</th>
+        </tr>
+      </thead>
+      <tbody id="listBody"></tbody>
+    </table>
   </body>
 </html>
