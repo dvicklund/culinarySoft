@@ -14,15 +14,15 @@
     <script type="text/javascript" src="./populateHtml.js" async></script>
     <script>
       $(document).ready(function() {
-       $("button").click(function(e){
-        e.preventDefault();
-        console.log($("#search").val());
-        var search = $("#search").val();
-        $.post("/vendor/products", {nameText: search}).done(function(data){
+        $("button").click(function(e){
+          e.preventDefault();
+          console.log($("#search").val());
+          var search = $("#search").val();
+          $.post("/vendor/products", {nameText: search}).done(function(data){
           $("#searchResult").html("<strong>" + data + "</strong>");
+          });
         });
       });
-    });
     </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>

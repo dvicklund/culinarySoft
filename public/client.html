@@ -25,8 +25,8 @@
       });
     </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  </head>
-  <body>
+    </head>
+    <body>
 
       <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -34,6 +34,9 @@
     <header>
       <h1>CulinarySoft</h1>
       <h2>A leader for over 2 days</h2>
+
+      <!--TODO: Create these pages and link-->
+
       <nav>
         <a href="#">Client Lists</a> |
         <a href="#">My Lists</a> |
@@ -42,6 +45,8 @@
       </nav>
     </header>
     <br>
+
+    <!--TODO: Format the product form inline or prettier-->
 
     <form id="newProductForm" action="/client/product" method="POST">
       <legend>Add a new product</legend>
@@ -94,17 +99,23 @@
     <table id="listTable">
       <thead>
         <tr>
-          <th  id="tableTitle" colspan="42"><h3>Product List</h3></th>
+          <th id="tableTitle" colspan="42"><h3>Product List</h3></th>
         </tr>
         <tr id="listHeaders">
           <th></th>
-          <th>Name</th>
-          <th>Price /</th>
-          <th>Unit</th>
-          <th>Description</th>
-          <th>UPN</th>
+
+          <!--TODO: implement sorts here-->
+
+          <th><a href="">Name</a></th>
+          <th><a href="">Price</a> /</th>
+          <th><a href="">Unit</a></th>
+          <th><a href="">Description</a></th>
+          <th><a href="">UPN</a></th>
         </tr>
       </thead>
+
+      <!--TODO: implement editing here-->
+
       <tbody id="listBody"></tbody>
     </table>
   </body>

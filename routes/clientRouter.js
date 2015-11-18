@@ -8,7 +8,7 @@ var jsonParser = bodyParser.json();
 
 clientRouter.get('/product', function(req, res) {
   Product.find({}, function(err, data) {
-    if(err) handleError(err, res);
+    if(err) return handleError(err, res);
     res.json(data);
   });
 });
