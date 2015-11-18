@@ -14,13 +14,13 @@
     <script type="text/javascript" src="./populateHtml.js" async></script>
     <script>
       $(document).ready(function() {
-        $("button").click(function(e){
-          e.preventDefault();
-          console.log($("#search").val());
-          var search = $("#search").val();
-          $.post("/vendor/products", {nameText: search}).done(function(data){
-          $("#searchResult").html("<strong>" + data + "</strong>");
-          });
+       $("button").click(function(e){
+        e.preventDefault();
+        var search = $("#search").val();
+        $.post("/vendor/products", {nameText: search}).done(function(data){
+          console.log(search);
+          console.log(data);
+          displayResults(data);
         });
       });
     </script>
@@ -94,7 +94,9 @@
         <input id="search" type="text" placeholder="Item Name"></input>
         <button type="submit">Search</button>
       </form>
-      <p id="searchResult"></p>
+      <table>
+        <tbody id="searchResult"></tbody>
+      </table>
     </section>
     <table id="listTable">
       <thead>
