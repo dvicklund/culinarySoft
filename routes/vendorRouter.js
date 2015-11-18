@@ -13,6 +13,16 @@ vendorRouter.get('/product', function(req, res) {
   });
 });
 
+vendorRouter.post('/products', urlencodedParser, function(req, res) {
+  var nameText = req.body.nameText;
+  Product.find({name: nameText}, function(err, data) {
+    if(err) handleError(err, res);
+
+    console.log(data);
+    res.send(data.toString());
+  });
+});
+
 vendorRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({
     name: req.body.name,

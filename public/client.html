@@ -11,48 +11,23 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
-<<<<<<< HEAD
+    <script type="text/javascript" src="./populateClientHtml.js" async></script>
     <script>
-=======
+      $(document).ready(function() {
+        $("button").click(function(e){
+          e.preventDefault();
+          console.log($("#search").val());
+          var search = $("#search").val();
+          $.post("/client/products", {nameText: search}).done(function(data){
+          $("#searchResult").html("<strong>" + data + "</strong>");
+          });
+        });
+      });
+    </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
   <body>
-  <script type="text/javascript" src="./populateClientHtml.js" async></script>
-  <script>
 
->>>>>>> 146b26a1f9281e85be8f7815c810c07f372219eb
-    $(document).ready(function() {
-      $("button").click(function(e){
-        e.preventDefault();
-        console.log($("#search").val());
-        var search = $("#search").val();
-        $.post("/client/products", {nameText: search}).done(function(data){
-<<<<<<< HEAD
-          var newData = data.split(',');
-          for(var i = 0; i < newData.length; i++) {
-            $(".searchResult").html("<p><strong>" + newData[i] + "</strong></p>");
-          }
-
-        });
-      });
-      $("#delete").click(function(e){
-        e.preventDefault();
-        console.log($("#remove").val());
-        var remove = $("#remove").val();
-        $.ajax({
-          url:("/client/products"),
-          method: 'delete',
-          data: {name: remove},
-          success:function(){
-          return "Item removed!";
-          }
-=======
-          $("#searchResult").html("<strong>" + data + "</strong>");
->>>>>>> 146b26a1f9281e85be8f7815c810c07f372219eb
-        });
-      });
-    });
-    </script>
       <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -114,10 +89,7 @@
         <input id="search" type="text" placeholder="Item Name"></input>
         <button type="submit">Search</button>
       </form>
-<<<<<<< HEAD
-=======
       <p id="searchResult"></p>
->>>>>>> 146b26a1f9281e85be8f7815c810c07f372219eb
     </section>
     <table id="listTable">
       <thead>
@@ -135,9 +107,5 @@
       </thead>
       <tbody id="listBody"></tbody>
     </table>
-<<<<<<< HEAD
-
-=======
->>>>>>> 146b26a1f9281e85be8f7815c810c07f372219eb
   </body>
 </html>
