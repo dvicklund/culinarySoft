@@ -18,7 +18,6 @@ clientRouter.post('/products', urlencodedParser, function(req, res) {
   Product.find({name: nameText}, function(err, data) {
     if(err) handleError(err, res);
 
-    console.log(data);
     res.send(JSON.stringify(data));
   });
 });
