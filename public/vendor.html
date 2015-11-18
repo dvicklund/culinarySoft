@@ -11,21 +11,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
-<<<<<<< HEAD
-    <!--TODO: Place favicon.ico and apple-touch-icon.png in the root directory -->
-  </head>
-  <body>
-  <script type="text/javascript" src="./populateHtml.js" async></script>
-  <script>
-
-    $(document).ready(function() {
-      $("button").click(function(e){
-=======
     <script type="text/javascript" src="./populateHtml.js" async></script>
     <script>
       $(document).ready(function() {
        $("button").click(function(e){
->>>>>>> removeinventory#5
         e.preventDefault();
         console.log($("#search").val());
         var search = $("#search").val();
@@ -45,7 +34,7 @@
     <header>
       <h1>CulinarySoft</h1>
       <h2>A leader for over 2 days</h2>
-      
+
       <!--TODO: Create these pages and link-->
 
       <nav>
@@ -56,7 +45,7 @@
       </nav>
     </header>
     <br>
-    
+
     <!--TODO: Format the product form inline or prettier-->
 
     <form id="newProductForm" action="/vendor/product" method="POST">
@@ -100,11 +89,6 @@
         <input type="submit" value="Save"><p id="savedMessage"></p>
       </fieldset>
     </form>
-<<<<<<< HEAD
-
-    <!--TODO: Sorts and edits, search bar at top-->
-
-=======
     <section>
       <form>
         <input id="search" type="text" placeholder="Item Name"></input>
@@ -112,7 +96,6 @@
       </form>
       <p id="searchResult"></p>
     </section>
->>>>>>> removeinventory#5
     <table id="listTable">
       <thead>
         <tr>
@@ -122,7 +105,7 @@
           <th></th>
 
           <!--TODO: implement sorts here-->
-          
+
           <th><a href="">Name</a></th>
           <th><a href="">Price</a> /</th>
           <th><a href="">Unit</a></th>
