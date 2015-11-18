@@ -16,3 +16,6 @@ authRouter.post('/signup', jsonParser, function(req, res) {
   });
 });
 
+authRouter.get('/signin', jsonParser, function(req, res) {
+  
+});
