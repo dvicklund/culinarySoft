@@ -13,12 +13,12 @@ clientRouter.get('/product', function(req, res) {
   });
 });
 
-clientRouter.post('/product', urlencodedParser, function(req, res) {
+clientRouter.post('/products', urlencodedParser, function(req, res) {
   var nameText = req.body.nameText;
   Product.find({name: nameText}, function(err, data) {
     if(err) handleError(err, res);
     console.log(data);
-    res.send(data);
+    res.send(data.toString());
   });
 });
 
