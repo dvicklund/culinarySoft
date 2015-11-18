@@ -32,7 +32,7 @@ vendorRouter.post('/product', urlencodedParser, function(req, res) {
   });
   newProduct.save(function(err, data) {
     if(err) return handleError(err, res);
-    res.redirect('/../vendor.html');
+    res.redirect(205, '/../vendor.html');
   });
 });
 

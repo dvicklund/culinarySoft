@@ -52,16 +52,15 @@ describe('vendor router', function() {
   });
 
   it('should be able to add a product', function(done) {
-    var productData = {name: 'test product'};
     chai.request('localhost:3000')
       .post('/vendor/product')
-      .send(productData)
+      .send({name: 'test product'})
       .end(function(err, res) {
-        expect(err).to.eql(null);
-        Product.findOne({name: 'test product'}, function(err, product) {
-          expect(product.name).to.eql('test product');
-          done();
-        });
+        res.should.have.status(205);
+        expect(err).to.be.null;
+        res.should.be.an('object');
+        res.body.should.be.an('object');
+        done();
       });
   });
 
