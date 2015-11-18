@@ -31,6 +31,7 @@ $.get("/vendor/product", function(data) {
   $('#UPN').val(counter);
 });
 
+// Display search results function (sans button)
 var displayResults = function(data) {
   $result = $('#searchResult');
   var htmlString = '';
@@ -42,5 +43,5 @@ var displayResults = function(data) {
     }
     htmlString += '</tr>';
   });
-  $result.append(htmlString);
+  $result.html(htmlString);
 };
