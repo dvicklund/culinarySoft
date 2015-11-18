@@ -45,11 +45,11 @@ describe('client router', function() {
 });
 
 describe('vendor router', function() {
-  //  after(function(done) {
-  //   mongoose.connection.db.dropDatabase(function() {
-  //     done();
-  //   });
-  // });
+   after(function(done) {
+    mongoose.connection.db.dropDatabase(function() {
+      done();
+    });
+  });
 
   it('should be able to add a product', function(done) {
     var productData = {name: 'test product'};
