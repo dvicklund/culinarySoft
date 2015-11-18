@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+<<<<<<< HEAD
     <!--TODO: Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
   <body>
@@ -19,15 +20,25 @@
 
     $(document).ready(function() {
       $("button").click(function(e){
+=======
+    <script type="text/javascript" src="./populateHtml.js" async></script>
+    <script>
+      $(document).ready(function() {
+       $("button").click(function(e){
+>>>>>>> removeinventory#5
         e.preventDefault();
         console.log($("#search").val());
         var search = $("#search").val();
         $.post("/vendor/products", {nameText: search}).done(function(data){
-          $(".searchResult").html("<strong>" + data + "</strong>");
+          $("#searchResult").html("<strong>" + data + "</strong>");
         });
       });
     });
-  </script>
+    </script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+
       <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -89,13 +100,23 @@
         <input type="submit" value="Save"><p id="savedMessage"></p>
       </fieldset>
     </form>
+<<<<<<< HEAD
 
     <!--TODO: Sorts and edits, search bar at top-->
 
+=======
+    <section>
+      <form>
+        <input id="search" type="text" placeholder="Item Name"></input>
+        <button type="submit">Search</button>
+      </form>
+      <p id="searchResult"></p>
+    </section>
+>>>>>>> removeinventory#5
     <table id="listTable">
       <thead>
         <tr>
-          <th  id="tableTitle" colspan="42"><h3>Product List</h3></th>
+          <th id="tableTitle" colspan="42"><h3>Product List</h3></th>
         </tr>
         <tr id="listHeaders">
           <th></th>

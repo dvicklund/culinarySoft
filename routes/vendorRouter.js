@@ -13,6 +13,15 @@ vendorRouter.get('/product', function(req, res) {
   });
 });
 
+vendorRouter.post('/products', urlencodedParser, function(req, res) {
+  var nameText = req.body.nameText;
+  Product.find({name: nameText}, function(err, data) {
+    if(err) handleError(err, res);
+
+    res.send(JSON.stringify(data));
+  });
+});
+
 vendorRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({
     name: req.body.name,
@@ -31,5 +40,19 @@ vendorRouter.post('/product/:id', function(req, res) {
   Product.findOneAndRemove({"_id": req.params.id}, function(err, data) {
     if(err) return handleError(err, res);
     res.redirect('/../vendor.html');
+  });
+});
+
+vendorRouter.get('/product/sort/name/des', function(req, res) {
+  Product.find({}, {"sort": ["name", "desc"]}, function(err, data) {
+    if(err) return handleError(err, res);
+    res.json(data);
+  });
+});
+
+vendorRouter.get('/product/sort/name/asc', function(req, res) {
+  Product.find({}, {"sort": ["name", "asc"]}, function(err, data) {
+    if(err) return handleError(err, res);
+    res.json(data);
   });
 });

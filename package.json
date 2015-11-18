@@ -20,8 +20,6 @@
   ],
   "author": "David Vicklund <david@vicklund.com>",
   "contributors": {
-    "name": "Jack Sneed",
-    "email": "sneed.jack@gmail.com",
     "name": "David Park",
     "email": "dpark4657@gmail.com"
   },
@@ -31,7 +29,7 @@
   },
   "homepage": "https://github.com/dvicklund/culinarySoft#readme",
   "dependencies": {
-    "bcrypt": "latest",
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.14.1",
     "eat": "^0.1.1",
     "express": "^4.13.3",
@@ -47,7 +45,6 @@
     "mocha": "^2.3.3"
   },
   "engines": {
-    "node": "5.*",
     "node": "4.*"
   }
 }
