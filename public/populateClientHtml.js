@@ -1,3 +1,4 @@
+
 $.get("/client/product", function(data) {
   // Grab product list container tbody element
   $list = $("#listBody");
@@ -30,3 +31,17 @@ $.get("/client/product", function(data) {
   $('#UPN').val(counter);
 });
 
+// Display search results function (sans button)
+var displayResults = function(data) {
+  $result = $('#searchResult');
+  var htmlString = '';
+  data.forEach(function(curr, i, arr) {
+    htmlString += '<tr id="' + curr._id + '">';
+    for(var j = 1; j < Object.keys(curr).length - 1; j++) {
+      j === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
+              : htmlString += '<td>' + curr[Object.keys(curr)[j]] + '</td>';
+    }
+    htmlString += '</tr>';
+  });
+  $result.html(htmlString);
+};

@@ -19,7 +19,7 @@
           console.log($("#search").val());
           var search = $("#search").val();
           $.post("/client/products", {nameText: search}).done(function(data){
-          $("#searchResult").html("<strong>" + data + "</strong>");
+            displayResults(data);
           });
         });
       });
@@ -94,7 +94,9 @@
         <input id="search" type="text" placeholder="Item Name"></input>
         <button type="submit">Search</button>
       </form>
-      <p id="searchResult"></p>
+      <table>
+        <tbody id="searchResult"></tbody>
+      </table>
     </section>
     <table id="listTable">
       <thead>
