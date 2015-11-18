@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!--TODO: Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
   <body>
   <script type="text/javascript" src="./populateHtml.js" async></script>
@@ -34,6 +34,9 @@
     <header>
       <h1>CulinarySoft</h1>
       <h2>A leader for over 2 days</h2>
+      
+      <!--TODO: Create these pages and link-->
+
       <nav>
         <a href="#">Vendor Lists</a> |
         <a href="#">My Lists</a> |
@@ -42,6 +45,8 @@
       </nav>
     </header>
     <br>
+    
+    <!--TODO: Format the product form inline or prettier-->
 
     <form id="newProductForm" action="/vendor/product" method="POST">
       <legend>Add a new product</legend>
@@ -84,6 +89,9 @@
         <input type="submit" value="Save"><p id="savedMessage"></p>
       </fieldset>
     </form>
+
+    <!--TODO: Sorts and edits, search bar at top-->
+
     <table id="listTable">
       <thead>
         <tr>
@@ -91,13 +99,19 @@
         </tr>
         <tr id="listHeaders">
           <th></th>
-          <th>Name</th>
-          <th>Price /</th>
-          <th>Unit</th>
-          <th>Description</th>
-          <th>UPN</th>
+
+          <!--TODO: implement sorts here-->
+          
+          <th><a href="">Name</a></th>
+          <th><a href="">Price</a> /</th>
+          <th><a href="">Unit</a></th>
+          <th><a href="">Description</a></th>
+          <th><a href="">UPN</a></th>
         </tr>
       </thead>
+
+      <!--TODO: implement editing here-->
+
       <tbody id="listBody"></tbody>
     </table>
   </body>

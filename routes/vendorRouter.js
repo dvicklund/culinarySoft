@@ -33,17 +33,3 @@ vendorRouter.post('/product/:id', function(req, res) {
     res.redirect('/../vendor.html');
   });
 });
-
-vendorRouter.get('/product/sort/name/des', function(req, res) {
-  Product.find({}, {"sort": ["name", "desc"]}, function(err, data) {
-    if(err) return handleError(err, res);
-    res.json(data);
-  });
-});
-
-vendorRouter.get('/product/sort/name/asc', function(req, res) {
-  Product.find({}, {"sort": ["name", "asc"]}, function(err, data) {
-    if(err) return handleError(err, res);
-    res.json(data);
-  });
-});
