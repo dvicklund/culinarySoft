@@ -7,14 +7,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CulinarySoft</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
-    <script type="text/javascript" src="./populateHtml.js" async></script>
-    <script>
-    
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+  <body>
+  <script type="text/javascript" src="./populateClientHtml.js" async></script>
+  <script>
+
     $(document).ready(function() {
       $("button").click(function(e){
         e.preventDefault();
@@ -24,44 +26,69 @@
           $(".searchResult").html("<strong>" + data + "</strong>");
         });
       });
-      $("#delete").click(function(e){
-        e.preventDefault();
-        console.log($("#remove").val());
-        var remove = $("#remove").val();
-        $.ajax({
-          url:("/client/products"),
-          method: 'delete',
-          data: {name: remove},
-          success:function(){
-          return "Item removed!";
-          }
-        });
-      });
     });
     </script>
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  </head>
-  <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
     <header>
       <h1>CulinarySoft</h1>
       <h2>A leader for over 2 days</h2>
       <nav>
-        <a href="#">Vendor Lists</a> |
+        <a href="#">Client Lists</a> |
         <a href="#">My Lists</a> |
         <a href="#">My Orders</a> |
         <a href="#">My Account</a>
       </nav>
     </header>
+    <br>
+
+    <form id="newProductForm" action="/vendor/product" method="POST">
+      <legend>Add a new product</legend>
+        <fieldset>
+          <table id="formTable">
+            <tr>
+              <td><label for="name">Product Name</label></td>
+              <td><input id="newProductName" type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td><label for="pricePerUnit">Price Per Unit</label></td>
+              <td><input id="newPricePerUnit" type="number" step="any" name="pricePerUnit"></td>
+            </tr>
+            <tr>
+              <td><label for="unit">Unit</label></td>
+              <td><select name="unit" id="unitSelect">
+                <optgroup label="By Weight">
+                  <option value="lb" selected>lb.</option>
+                  <option value="kg">kg.</option>
+                  <option value="oz">oz.</option>
+                  <option value="g">g.</option>
+                </optgroup>
+                <optgroup label="By Quantity">
+                  <option value="case">case</option>
+                  <option value="gross">gross</option>
+                  <option value="dozen">dozen</option>
+                  <option value="each">each</option>
+                </optgroup>
+              </select></td>
+            </tr>
+            <tr>
+              <td><label for="description">Description</label></td>
+              <td><input id="descriptionField" type="text" name="description"></td>
+            </tr>
+            <tr>
+              <td><label for="UPN">UPN</label></td>
+              <td><input id="UPN" type="text" name="UPN"></td>
+            </tr>
+          </table>
+        <input type="submit" value="Save"><p id="savedMessage"></p>
+      </fieldset>
+    </form>
     <section>
       <form>
         <input id="search" type="text" placeholder="Item Name"></input>
         <button type="submit">Search</button>
       </form>
-      <table class="searchResult"></table>
     </section>
     <table id="listTable">
       <thead>
