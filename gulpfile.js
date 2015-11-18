@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
+var mocha = require('gulp-mocha');
 var appFiles = ['index.js', 'lib/**/*.js', 'bin/**/*.js', 'routes/**/*.js', 'public/**/*.js'];
 var testFiles = ['./test/**/*.js'];
 
