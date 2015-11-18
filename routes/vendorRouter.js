@@ -13,12 +13,12 @@ vendorRouter.get('/product', function(req, res) {
   });
 });
 
+// Search by name route
 vendorRouter.post('/products', urlencodedParser, function(req, res) {
   var nameText = req.body.nameText;
   Product.find({name: nameText}, function(err, data) {
     if(err) handleError(err, res);
-
-    res.send(JSON.stringify(data));
+    res.json(data);
   });
 });
 
@@ -43,16 +43,16 @@ vendorRouter.post('/product/:id', function(req, res) {
   });
 });
 
-vendorRouter.get('/product/sort/name/des', function(req, res) {
-  Product.find({}, {"sort": ["name", "desc"]}, function(err, data) {
-    if(err) return handleError(err, res);
-    res.json(data);
-  });
-});
+// vendorRouter.get('/product/sort/name/des', function(req, res) {
+//   Product.find({}, {"sort": ["name", "desc"]}, function(err, data) {
+//     if(err) return handleError(err, res);
+//     res.json(data);
+//   });
+// });
 
-vendorRouter.get('/product/sort/name/asc', function(req, res) {
-  Product.find({}, {"sort": ["name", "asc"]}, function(err, data) {
-    if(err) return handleError(err, res);
-    res.json(data);
-  });
-});
+// vendorRouter.get('/product/sort/name/asc', function(req, res) {
+//   Product.find({}, {"sort": ["name", "asc"]}, function(err, data) {
+//     if(err) return handleError(err, res);
+//     res.json(data);
+//   });
+// });
