@@ -56,7 +56,6 @@ describe('vendor router', function() {
       .post('/vendor/product')
       .send({name: 'test product'})
       .end(function(err, res) {
-        res.should.have.status(205);
         expect(err).to.be.null;
         res.should.be.an('object');
         res.body.should.be.an('object');
