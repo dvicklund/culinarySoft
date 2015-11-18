@@ -15,7 +15,7 @@ vendorRouter.get('/product', function(req, res) {
 
 // Search by name route
 vendorRouter.post('/products', urlencodedParser, function(req, res) {
-  var nameText = req.body.nameText;
+  var nameText = req.body.nameText.toLowerCase();
   Product.find({name: nameText}, function(err, data) {
     if(err) handleError(err, res);
     res.json(data);
@@ -24,10 +24,10 @@ vendorRouter.post('/products', urlencodedParser, function(req, res) {
 
 vendorRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({
-    name: req.body.name,
+    name: req.body.name.toLowerCase(),
     pricePerUnit: req.body.pricePerUnit,
     unit: req.body.unit,
-    description: req.body.description,
+    description: req.body.description.toLowerCase(),
     UPN: req.body.UPN
   });
   newProduct.save(function(err, data) {
