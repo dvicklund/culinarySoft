@@ -15,9 +15,9 @@ $.get("/vendor/product", function(data) {
     htmlString += '<td><form action="/vendor/product/' + curr._id + '" method="POST"><input type="submit" value="Remove"></input></form></td>';
 
     // Loop through each product to fill <td>s
-    for(var j = 0; j < Object.keys(curr).length - 1; j++) {
+    for(var j = 1; j < Object.keys(curr).length - 1; j++) {
                                       // Here, using the 'numeral' library to format 2nd column as currency
-      j === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
+      j === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[j]] + '</td>';
     }
     htmlString += '</tr>';
@@ -37,8 +37,8 @@ var displayResults = function(data) {
   var htmlString = '';
   data.forEach(function(curr, j, arr) {
     htmlString += '<tr id="' + curr._id + '">';
-    for(var j = 0; j < Object.keys(curr).length - 1; j++) {
-      j === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
+    for(var j = 1; j < Object.keys(curr).length - 1; j++) {
+      j === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[j]] + '</td>';
     }
     htmlString += '</tr>';
