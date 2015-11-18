@@ -19,7 +19,7 @@ clientRouter.post('/products', urlencodedParser, function(req, res) {
     if(err) handleError(err, res);
 
     console.log(data);
-    res.send(data.toString());
+    res.send(JSON.stringify(data));
   });
 });
 
