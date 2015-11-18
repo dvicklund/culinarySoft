@@ -14,13 +14,12 @@
     <script type="text/javascript" src="./populateHtml.js" async></script>
     <script>
       $(document).ready(function() {
-       $("button").click(function(e){
-        e.preventDefault();
-        var search = $("#search").val();
-        $.post("/vendor/products", {nameText: search}).done(function(data){
-          console.log(search);
-          console.log(data);
-          displayResults(data);
+        $("button").click(function(e){
+          e.preventDefault();
+          var search = $("#search").val();
+          $.post("/vendor/products", {nameText: search}).done(function(data){
+            displayResults(data);
+          });
         });
       });
     </script>
