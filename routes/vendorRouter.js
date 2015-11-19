@@ -16,7 +16,7 @@ vendorRouter.get('/product', function(req, res) {
 // Search by name route
 vendorRouter.post('/products', urlencodedParser, function(req, res) {
   var nameText = req.body.nameText;
-  Product.find({name: nameText}, function(err, data) {
+  Product.find({name: new RegExp('/^' + nameText + '$/i')}, function(err, data) {
     if(err) handleError(err, res);
     res.json(data);
   });
