@@ -6,6 +6,7 @@ var User = require(__dirname + '/../models/userModel');
 
 var authRouter = module.exports = exports = express.Router();
 authRouter.post('/signup', jsonParser, function(req, res) {
+  console.log(req.body);
   var user = new User();
   user.auth.basic.username = req.body.username;
   user.username = req.body.username;
