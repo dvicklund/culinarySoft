@@ -29,7 +29,6 @@ $.get("/client/product", function(data) {
   $list = $("#listBody");
 
   // Initialize counter (for auto-UPN population) and htmlString (for table row population)
-  var counter = 1;
   var htmlString = '';
 
   // Loop through product data from DB and format
@@ -42,18 +41,15 @@ $.get("/client/product", function(data) {
     // Loop through each product to fill <td>s
     for(var j = 0; j < Object.keys(curr).length - 1; j++) {
                                       // Here, using the 'numeral' library to format 2nd column as currency
-      j === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
+      j === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('0') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[j]] + '</td>';
     }
     htmlString += '</tr>';
-    counter++;
+
   });
 
   // Fill the table with the new string
   $list.append(htmlString);
-
-  // Set UPN automatically to the new number of products + 1
-  $('#UPN').val(counter);
 });
 
 // Display search results function (sans button)
@@ -63,7 +59,7 @@ var displayResults = function(data) {
   data.forEach(function(curr) {
     htmlString += '<tr id="' + curr._id + '">';
     for(var i = 0; i < Object.keys(curr).length - 1; i++) {
-      i === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('$0,0.00') + ' /</td>'
+      i === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('0') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[i]] + '</td>';
     }
     htmlString += '</tr>';
@@ -78,7 +74,7 @@ var displayList = function(data) {
     htmlString += '<tr id="' + curr._id + '">';
     htmlString += '<td><form action="/client/product/' + curr._id + '" method="POST"><input type="submit" value="Remove"></input></form></td>';
     for(var i = 0; i < Object.keys(curr).length - 1; i++) {
-      i === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('$0,0.00') + ' /</td>'
+      i === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('0') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[i]] + '</td>';
     }
     htmlString += '</tr>';
