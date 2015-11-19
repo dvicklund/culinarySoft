@@ -1,4 +1,65 @@
 * {
-  background-color: lightgray;
   color: darkblue; 
+}
+
+html {
+  height: 100%;
+  background: -prefix-linear-gradient(top, white, darkgrey); 
+  background: linear-gradient(to bottom, white, darkgrey);
+  background-attachment: fixed;
+}
+
+.buttonLink {
+  padding: 10px 15px;
+  background-color: #4479BA;
+  color: #FFF;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+#splitLogin {
+  text-align: center;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section h1 {
+  font-size: 2em;
+  margin-bottom: -3%;
+}
+
+#newProductForm {
+  width: 90;
+}
+
+#listTable {
+  width: 100%;
+}
+
+#listBody td:nth-child(3) {
+  text-align: right;
+}
+
+#listHeaders th:nth-child(3) {
+  text-align: right;
+}
+
+#listBody td:nth-child(4) {
+  text-align: left;
+}
+
+#listHeaders th:nth-child(4) {
+  text-align: left;
+}
+
+#tableTitle h3 {
+  border-bottom: 1px dotted black;
 }
