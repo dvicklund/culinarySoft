@@ -1,4 +1,13 @@
-
+$(document).ready(function() {
+  // Single out products from product list by name
+  $("#search").keyup(function(e){
+    e.preventDefault();
+    var search = $("#search").val();
+    $.post("/vendor/products", {nameText: search}).done(function(data){
+      displayList(data);
+    });
+  });
+});
 $.get("/vendor/product", function(data) {
   // Grab product list container tbody element
   $list = $("#listBody");

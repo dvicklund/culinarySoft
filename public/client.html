@@ -12,17 +12,6 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
     <script type="text/javascript" src="./populateClientHtml.js" async></script>
-    <script>
-      $(document).ready(function() {
-        $("button").click(function(e){
-          e.preventDefault();
-          var search = $("#search").val();
-          $.post("/client/products", {nameText: search}).done(function(data){
-            displayResults(data);
-          });
-        });
-      });
-    </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
     <body>
@@ -90,12 +79,8 @@
     </form>
     <section>
       <form>
-        <input id="search" type="text" placeholder="Item Name"></input>
-        <button type="submit">Search</button>
+        <input id="search" type="text" placeholder="Filter by Name"></input>
       </form>
-      <table>
-        <tbody id="searchResult"></tbody>
-      </table>
     </section>
     <table id="listTable">
       <thead>
