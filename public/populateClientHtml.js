@@ -8,6 +8,22 @@ $(document).ready(function() {
     });
   });
 });
+
+$('#newProductForm').hide();
+
+$('#showItemForm').on('click', function() {
+  $("#newProductForm").slideDown('normal');
+});
+
+$('#saveInfo').on('click', function() {
+  $("#newProductForm").slideUp('slow')
+});
+
+$('#cancel').on('click', function(e) {
+  e.preventDefault();
+  $("#newProductForm").slideUp('slow')
+});
+
 $.get("/client/product", function(data) {
   // Grab product list container tbody element
   $list = $("#listBody");
@@ -24,9 +40,9 @@ $.get("/client/product", function(data) {
     htmlString += '<td><form action="/client/product/' + curr._id + '" method="POST"><input type="submit" value="Remove"></input></form></td>';
 
     // Loop through each product to fill <td>s
-    for(var j = 1; j < Object.keys(curr).length - 1; j++) {
+    for(var j = 0; j < Object.keys(curr).length - 1; j++) {
                                       // Here, using the 'numeral' library to format 2nd column as currency
-      j === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
+      j === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,0.00') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[j]] + '</td>';
     }
     htmlString += '</tr>';
@@ -46,8 +62,8 @@ var displayResults = function(data) {
   var htmlString = '';
   data.forEach(function(curr) {
     htmlString += '<tr id="' + curr._id + '">';
-    for(var i = 1; i < Object.keys(curr).length - 1; i++) {
-      i === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('$0,0.00') + ' /</td>'
+    for(var i = 0; i < Object.keys(curr).length - 1; i++) {
+      i === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('$0,0.00') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[i]] + '</td>';
     }
     htmlString += '</tr>';
@@ -61,8 +77,8 @@ var displayList = function(data) {
   data.forEach(function(curr) {
     htmlString += '<tr id="' + curr._id + '">';
     htmlString += '<td><form action="/client/product/' + curr._id + '" method="POST"><input type="submit" value="Remove"></input></form></td>';
-    for(var i = 1; i < Object.keys(curr).length - 1; i++) {
-      i === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('$0,0.00') + ' /</td>'
+    for(var i = 0; i < Object.keys(curr).length - 1; i++) {
+      i === 1 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('$0,0.00') + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[i]] + '</td>';
     }
     htmlString += '</tr>';

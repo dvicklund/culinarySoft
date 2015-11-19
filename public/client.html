@@ -35,9 +35,9 @@
     <br>
 
     <!--TODO: Format the product form inline or prettier-->
-
+    <a id="showItemForm" type="submit"> Add a new list item</a>
     <form id="newProductForm" action="/client/product" method="POST">
-      <legend>Add a new product</legend>
+
         <fieldset>
           <table id="formTable">
             <tr>
@@ -74,7 +74,7 @@
               <td><input id="UPN" type="text" name="UPN"></td>
             </tr>
           </table>
-        <input type="submit" value="Save"><p id="savedMessage"></p>
+        <input id="saveInfo" type="submit" value="Save"><button id="cancel" type="reset">Cancel</button><p id="savedMessage"></p>
       </fieldset>
     </form>
     <section>
