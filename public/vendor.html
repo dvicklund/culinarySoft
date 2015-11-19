@@ -14,11 +14,11 @@
     <script type="text/javascript" src="./populateHtml.js" async></script>
     <script>
       $(document).ready(function() {
-        $("button").click(function(e){
+        $("#search").keyup(function(e){
           e.preventDefault();
           var search = $("#search").val();
           $.post("/vendor/products", {nameText: search}).done(function(data){
-            displayResults(data);
+            displayList(data);
           });
         });
       });
@@ -90,12 +90,8 @@
     </form>
     <section>
       <form>
-        <input id="search" type="text" placeholder="Item Name"></input>
-        <button type="submit">Search</button>
+        <input id="search" type="text" placeholder="Filter by Name"></input>
       </form>
-      <table>
-        <tbody id="searchResult"></tbody>
-      </table>
     </section>
     <table id="listTable">
       <thead>
