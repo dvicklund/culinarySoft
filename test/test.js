@@ -12,9 +12,15 @@ var should = chai.should();
 chai.use(chaihttp);
 
 describe('client router', function() {
-//   it('should be able to view vendor lists', function() {
-
-//   });
+  it('should be able to view vendor lists', function(done) {
+    chai.request('localhost:3000')
+      .get('/vendor/product')
+      .end(function(err, res) {
+        expect(err).to.eql(null);
+        expect(Array.isArray(res.body)).to.eql(true);
+        done();
+      });
+  });
 
 //   it('should be able to make a new list', function() {
 
@@ -56,7 +62,7 @@ describe('vendor router', function() {
       .post('/vendor/product')
       .send({name: 'test product'})
       .end(function(err, res) {
-        expect(err).to.be.null;
+        expect(err).to.eql(null);
         res.should.be.an('object');
         res.body.should.be.an('object');
         done();
