@@ -13,10 +13,12 @@ vendorRouter.get('/product', function(req, res) {
   });
 });
 
-// Search by name route
+// TODO: Don't return all results on empty search
+// 
+// Search by name route using generated regular expression.
 vendorRouter.post('/products', urlencodedParser, function(req, res) {
-  var nameText = req.body.nameText;
-  Product.find({name: new RegExp('/^' + nameText + '$/i')}, function(err, data) {
+  var query = {name: new RegExp(req.body.nameText, 'i')};
+  Product.find(query, function(err, data) {
     if(err) handleError(err, res);
     res.json(data);
   });
