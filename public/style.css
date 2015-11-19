@@ -63,3 +63,8 @@ section h1 {
 #tableTitle h3 {
   border-bottom: 1px dotted black;
 }
+
+.loginBox {
+  display: block;
+  margin: 0 auto;
+}

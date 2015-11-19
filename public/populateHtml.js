@@ -69,3 +69,13 @@ var displayList = function(data) {
   });
   $result.html(htmlString);
 };
+
+$(document).ready(function() {
+  $("#search").keyup(function(e){
+    e.preventDefault();
+    var search = $("#search").val();
+    $.post("/vendor/products", {nameText: search}).done(function(data){
+      displayList(data);
+    });
+  });
+});
