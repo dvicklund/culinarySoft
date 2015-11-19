@@ -1,4 +1,4 @@
-var Product = require(__dirname + "/../models/productModel");
+var Product = require(__dirname + "/../models/itemListModel");
 var handleError = require(__dirname + "/../lib/handleError");
 var bodyParser = require('body-parser');
 var express = require('express');
@@ -27,10 +27,8 @@ clientRouter.post('/products', urlencodedParser, function(req, res) {
 clientRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({
     name: req.body.name,
-    pricePerUnit: req.body.pricePerUnit,
+    quantity: req.body.quantity,
     unit: req.body.unit,
-    description: req.body.description,
-    UPN: req.body.UPN
   });
   newProduct.save(function(err, data) {
     if(err) return handleError(err, res);
