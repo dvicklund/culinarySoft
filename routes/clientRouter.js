@@ -28,7 +28,7 @@ clientRouter.post('/product', urlencodedParser, function(req, res) {
   var newProduct = new Product({
     name: req.body.name,
     quantity: req.body.quantity,
-    unit: req.body.unit,
+    unit: req.body.unit
   });
   newProduct.save(function(err, data) {
     if(err) return handleError(err, res);
