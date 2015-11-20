@@ -1,4 +1,5 @@
 * {
+  font-family: 'Raleway', sans-serif;
   color: black;
 }
 
@@ -15,6 +16,16 @@ body {
 
 header {
   text-align: center;
+}
+
+.indexbuttonLink {
+  margin: auto;
+  padding: 0.3em;
+  color: #eeeeee;
+  font-size: 1.3em;
+  background-color: rgba(0, 0, 0, 0.20);
+  width: 15em;
+
 }
 
 .buttonLink {
@@ -54,10 +65,12 @@ a:hover {
 
 h1 {
   text-align: center;
+
 }
 
 h2 {
   text-align: center;
+
 }
 
 section h1 {
