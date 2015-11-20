@@ -27,6 +27,7 @@
 
       <nav>
         <a id="myListLink">Product List</a> |
+        <a id="showItemForm" type="submit"> Add Item to Product List</a> |
         <a href="#">My Orders</a> |
         <a href="#">My Account</a>
       </nav>
@@ -34,7 +35,7 @@
     <br>
 
     <!--TODO: Format the product form inline or prettier-->
-    <a id="showItemForm" type="submit"> Add item to product list</a>
+
     <form id="newProductForm" action="/client/product" method="POST">
 
         <fieldset>
@@ -65,7 +66,7 @@
               </select></td>
             </tr>
           </table>
-        <input id="saveInfo" type="submit" value="Save"><button id="cancel" type="reset">Cancel</button><p id="savedMessage"></p>
+        <button>Save</button><button id="done" type="reset">Done</button>
       </fieldset>
     </form>
     <section id="myList">
