@@ -13,8 +13,6 @@ clientRouter.get('/product', function(req, res) {
   });
 });
 
-// TODO: Don't return all results on empty search
-//
 // Search by name route using generated regular expression.
 clientRouter.post('/products', urlencodedParser, function(req, res) {
   var query = {name: new RegExp(req.body.nameText, 'i')};

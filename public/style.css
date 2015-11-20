@@ -95,12 +95,8 @@ section h1 {
   display: inline-block;
 }
 
-td > input {
+.orderNumber {
   width: 3em;
-}
-
-#formTable > tr {
-  text-align: left;
 }
 
 #listDiv {
