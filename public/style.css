@@ -4,9 +4,8 @@
 
 html {
   height: 100%;
-  background: -prefix-linear-gradient(top, white, orange);
-  background: linear-gradient(to bottom, white, orange);
-  background-attachment: fixed;
+  background-image: url("/../static/8WC4QQ0MWC.jpg") ;
+  background-size: 100%;
 }
 
 .buttonLink {

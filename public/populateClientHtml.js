@@ -10,19 +10,12 @@ $(document).ready(function() {
 });
 
 // hide/show item list.
-$('#newProductForm').hide();
-
 $('#showItemForm').on('click', function() {
-  $("#newProductForm").slideDown('normal');
+  $("#newProductForm").fadeIn('normal');
 });
 
-$('#saveInfo').on('click', function() {
-  $("#newProductForm").slideUp('fast')
-});
-
-$('#cancel').on('click', function(e) {
-  e.preventDefault();
-  $("#newProductForm").slideUp('fast')
+$('#done').on('click', function() {
+  $("#newProductForm").fadeOut()
 });
 
 $.get("/client/product", function(data) {
@@ -52,21 +45,6 @@ $.get("/client/product", function(data) {
   // Fill the table with the new string
   $list.append(htmlString);
 });
-
-// Display search results function (sans button)
-var displayResults = function(data) {
-  $result = $('#searchResult');
-  var htmlString = '';
-  data.forEach(function(curr) {
-    htmlString += '<tr id="' + curr._id + '">';
-    for(var i = 1; i < Object.keys(curr).length - 1; i++) {
-      i === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('0') + ' /</td>'
-              : htmlString += '<td>' + curr[Object.keys(curr)[i]] + '</td>';
-    }
-    htmlString += '</tr>';
-  });
-  $result.html(htmlString);
-};
 
 var displayList = function(data) {
   $result = $('#listBody');
