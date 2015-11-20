@@ -142,6 +142,10 @@ section h1 {
   margin: 0 auto;
 }
 
+td{
+  padding: .5em;
+}
+
 fieldset {
   border: none;
   position: relative; center;
