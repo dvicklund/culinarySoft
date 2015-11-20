@@ -10,6 +10,14 @@ $(document).ready(function() {
   });
 });
 
+$('#showItemForm').on('click', function() {
+  $("#newProductForm").fadeIn('normal');
+});
+
+$('#done').on('click', function() {
+  $("#newProductForm").fadeOut()
+});
+
 $.get("/vendor/product", function(data) {
   // Grab product list container tbody element
   $list = $("#listBody");
