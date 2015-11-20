@@ -9,6 +9,33 @@ $(document).ready(function() {
   });
 });
 
+$('#myList').hide();
+
+$('#myListLink').on('click', function() {
+  $("#myList").slideDown('normal');
+});
+
+$('#closeListLink').on('click', function() {
+
+  $("#myList").slideUp('fast')
+});
+
+// hide/show vendor list.
+$('#vendorListForm').hide();
+
+$('#vendorListLink').on('click', function() {
+  $("#vendorListForm").slideDown('normal');
+});
+
+$('#saveNewVendor').on('click', function() {
+  $("#vendorListForm").slideUp('fast')
+});
+
+$('#cancelVendorAdd').on('click', function(e) {
+  e.preventDefault();
+  $("#vendorListForm").slideUp('fast')
+});
+
 // hide/show item list.
 $('#newProductForm').hide();
 
