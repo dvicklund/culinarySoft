@@ -113,14 +113,14 @@ describe('authentication router', function() {
       });
   });
 
-/*  it('should list all products on get /vendor/product', function(done) {
+  it('should allow user to signin', function(done) {
     chai.request('localhost:3000')
-      .get('/vendor/product')
+      .get('/auth/signin')
       .end(function(err, res) {
         res.should.have.status(200);
-        res.should.be.an('object');
-        res.body.should.be.an('array');
+        //res.should.be.an('object');
+        //res.body.should.be.an('array');
         done();
       });
-  });*/
+  });
 });
