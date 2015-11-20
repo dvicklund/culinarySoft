@@ -104,6 +104,7 @@ section h1 {
 }
 
 #listTable {
+  width: 40em;
   padding: .5em;
   margin-left: auto;
   margin-right: auto;
@@ -123,7 +124,7 @@ section h1 {
 }
 
 #listHeaders th:nth-child(4) {
-  text-align: right;
+  text-align: left;
 }
 
 #tableTitle h3 {
