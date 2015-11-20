@@ -101,7 +101,7 @@ var displayList = function(data) {
   data.forEach(function(curr) {
     htmlString += '<tr id="' + curr._id + '">';
     htmlString += '<td><form action="/client/product/' + curr._id + '" method="POST"><input type="submit" value="Remove"></input></form></td>';
-    for(var i = 1; i < Object.keys(curr).length; i++) {
+    for(var i = 1; i < Object.keys(curr).length - 1; i++) {
       i === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])) + ' /</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[i]] + '</td>';
     }

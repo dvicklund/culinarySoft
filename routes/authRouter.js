@@ -3,10 +3,16 @@ var jsonParser = require('body-parser').json();
 var handleError = require(__dirname + '/../lib/handleError');
 var basicHttp = require(__dirname + '/../lib/basicHttpAuth');
 var User = require(__dirname + '/../models/userModel');
+var urlencodedParser = require('body-parser').urlencoded({extended: false});
 
 var authRouter = module.exports = exports = express.Router();
-authRouter.post('/signup', jsonParser, function(req, res) {
-  console.log(req.body);
+
+// var middleTest = function(req, res, next) {
+//   console.log(req);
+//   next();
+// };
+
+authRouter.post('/signup', urlencodedParser, function(req, res) {
   var user = new User();
   user.auth.basic.username = req.body.username;
   user.username = req.body.username;
@@ -14,7 +20,6 @@ authRouter.post('/signup', jsonParser, function(req, res) {
 
   user.save(function(err, data) {
     if (err) return handleError(err, res);
-    //prophet
     user.generateToken(function(err, token) {
       if (err) return handleError(err, res);
 
