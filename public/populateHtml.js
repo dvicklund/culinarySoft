@@ -1,4 +1,14 @@
 $(document).ready(function() {
+  $('#newProductForm').hide();
+
+  $('#addNewProduct').on('click', function() {
+    $("#newProductForm").fadeIn('normal');
+  });
+
+  $('#done').on('click', function() {
+    $("#newProductForm").fadeOut('normal');
+  });
+
   // Single out products from product list by name
   $("#search").keyup(function(e){
     e.preventDefault();

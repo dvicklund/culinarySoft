@@ -11,10 +11,11 @@ html {
 body {
   border-radius: 1em;
   background-color: rgba(255,255,255,0.5);
+  text-align: center;
 }
 
 header {
-  align: center;
+  text-align: center;
 }
 
 .buttonLink {
@@ -56,8 +57,17 @@ section h1 {
   margin-bottom: -3%;
 }
 
+#done {
+  color: #b00;
+  float: right;
+}
+
 #newProductForm {
-  width: 90;
+  display: inline-block;
+}
+
+#formTable >> td {
+  text-align: left;
 }
 
 #listDiv {
