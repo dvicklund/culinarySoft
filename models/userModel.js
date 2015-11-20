@@ -4,6 +4,9 @@ var eat = require('eat');
 
 var userSchema = new mongoose.Schema({
   username: String,
+  email: String,
+  firstname: String,
+  lastname: String,
   auth: {
     basic: {
       username: String,
@@ -21,9 +24,9 @@ userSchema.methods.checkPassword = function(password) {
   return bcrypt.compareSync(password, this.auth.basic.password);
 };
 
-userSchema.methods.generateToken = function(callback) {
+userSchema.methods.generateToken = function(cb) {
   var id = this._id;
-  eat.encode({id: id}, process.env.APP_SECRET, callback);
+  eat.encode({id: id}, process.env.APP_SECRET, cb);
 };
 
 module.exports = mongoose.model('User', userSchema);

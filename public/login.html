@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="./login.js"></script>
+    <script type="text/javascript" src="./signup.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
   <body>
@@ -23,8 +24,21 @@
         <h1>Welcome to CulinarySoft!</h1>
         <h3>Where Chefs' Dreams Come True</h3>
       </header>
-      <input class="loginBox" id="usernameInput" type="text" name="usernameInput" placeholder="Username">
-      <input class="loginBox" id="passwordInput" type="password" name="passwordInput" placeholder="Password">
+      <section id="loginFields">
+        <h4>Existing User Login</h4>
+        <input class="loginBox" id="usernameInput" type="text" name="usernameInput" placeholder="Username">
+        <input class="loginBox" id="passwordInput" type="password" name="passwordInput" placeholder="Password">
+      </section>
+      <section id="signupFields">
+        <h4>New User Signup</h4>
+        <input class="loginBox" id="newFirstName" type="text" placeholder="First Name">
+        <input class="loginBox" id="newLastName" type="text" placeholder="Last Name">
+        <input class="loginBox" id="newEmail" type="text" placeholder="Email Address">
+        <input class="loginBox" id="newUsername" type="text" placeholder="Username">
+        <input class="loginBox" id="newPassword" type="password" placeholder="Password">
+        <input class="loginBox" id="newPasswordConf" type="password" placeholder="Confirm Password">
+        <span id="failureAlert"></span>
+      </section>
     </section>
   </body>
 </html>

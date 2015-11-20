@@ -14,6 +14,9 @@ var authRouter = module.exports = exports = express.Router();
 
 authRouter.post('/signup', urlencodedParser, function(req, res) {
   var user = new User();
+  user.firstname = req.body.firstname;
+  user.lastname = req.body.lastname;
+  user.email = req.body.email;
   user.auth.basic.username = req.body.username;
   user.username = req.body.username;
   user.hashPassword(req.body.password);
@@ -22,7 +25,6 @@ authRouter.post('/signup', urlencodedParser, function(req, res) {
     if (err) return handleError(err, res);
     user.generateToken(function(err, token) {
       if (err) return handleError(err, res);
-
       res.json({token: token});
     });
   });
@@ -52,7 +54,6 @@ authRouter.get('/signin', basicHttp, function(req, res) {
 
     user.generateToken(function(err, token) {
       if (err) return handleError(err, res);
-
       res.json({token: token});
     });
   });
