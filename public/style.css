@@ -8,10 +8,23 @@ html {
   background-size: cover;
 }
 
+body {
+  border-radius: 1em;
+  background-color: rgba(255,255,255,0.5);
+}
+
+header {
+  align: center;
+}
+
 .buttonLink {
   padding: 10px 15px;
   background-color: #4479BA;
   color: #FFF;
+}
+
+fieldset {
+  background-color: rgba(255,255,255,0.5);
 }
 
 a {
@@ -30,7 +43,12 @@ a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1em;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.loginBox {
+  display: block;
+  margin: 0 auto;
 }
 
 section h1 {
@@ -40,6 +58,10 @@ section h1 {
 
 #newProductForm {
   width: 90;
+}
+
+#listDiv {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #listTable {
@@ -64,9 +86,6 @@ section h1 {
 
 #tableTitle h3 {
   border-bottom: 1px dotted black;
+  margin-bottom: 0;
 }
 
-.loginBox {
-  display: block;
-  margin: 0 auto;
-}

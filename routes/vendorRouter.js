@@ -7,9 +7,9 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 var jsonParser = bodyParser.json();
 var eatAuth = require(__dirname + "/../lib/eatAuth");
 
-vendorRouter.get('/', function(req, res) {
-  res.redirect('/../vendor.html');
-});
+// vendorRouter.get('/', function(req, res) {
+//   res.redirect('/../vendor.html');
+// });
 
 vendorRouter.get('/product', function(req, res) {
   Product.find({}, function(err, data) {

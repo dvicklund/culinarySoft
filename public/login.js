@@ -12,6 +12,8 @@ $(function() {
         }
       }).done(function(data) {
         window.location.replace("/../vendor.html");
+      }).fail(function(data) {
+
       });
     }
   });
