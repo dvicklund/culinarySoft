@@ -93,3 +93,34 @@ describe('vendor router', function() {
     });
   });
 });
+
+describe('authentication router', function() {
+   after(function(done) {
+    mongoose.connection.db.dropDatabase(function() {
+      done();
+    });
+  });
+
+  it('should be able to add a user', function(done) {
+    chai.request('localhost:3000')
+      .post('/auth/signup')
+      .send({name: 'test user'})
+      .end(function(err, res) {
+        expect(err).to.eql(null);
+        res.should.be.an('object');
+        res.body.should.be.an('object');
+        done();
+      });
+  });
+
+  it('should allow user to signin', function(done) {
+    chai.request('localhost:3000')
+      .get('/auth/signin')
+      .end(function(err, res) {
+        res.should.have.status(200);
+        //res.should.be.an('object');
+        //res.body.should.be.an('array');
+        done();
+      });
+  });
+});
