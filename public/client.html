@@ -16,6 +16,7 @@
   </head>
     <body>
 
+
       <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -25,50 +26,14 @@
 
       <!--TODO: Create these pages and link-->
 
-      <nav>
-        <a id="vendorListLink">Vendor List</a> |
-        <a id="myListLink">Product List</a> |
-        <a href="#">My Orders</a> |
-        <a href="#">My Account</a>
-      </nav>
-    </header>
-    <section id="vendorList">
-      <form id="vendorListForm" action="/client/vendorList" method="POST">
-        <fieldset>
-          <table>
-            <tr>
-              <td><label for="name">Name</label></td>
-              <td><input id="newVendorName" type="text" name="name"></td>
-            </tr>
-            <tr>
-              <td><label for="unit">Product Type</label></td>
-              <td><select name="product" id="productType">
-                  <option selected>General</option>
-                  <option>Produce</option>
-                  <option>Dairy</option>
-                  <option>Liquor</option>
-                  <option>Seafood</option>
-                  <option>Meats</option>
-              </select></td>
-            </tr>
-             <tr>
-              <td><label for="name">Description</label></td>
-              <td><input id="newVendorDescription" type="text" name="name"></td>
-            </tr>
-             <tr>
-              <td><label for="name">Telephone</label></td>
-              <td><input id="newVendorTelephone" type="number" name="name"></td>
-            </tr>
-          </table>
-        <input id="saveNewVendor" type="submit" value="Save"><button id="cancelVendorAdd" type="reset">Cancel</button><p id="savedMessage"></p>
-      </fieldset>
-    </form>
-    </section>
 
+
+
+    </header>
     <br>
 
     <!--TODO: Format the product form inline or prettier-->
-    <a id="showItemForm" type="submit"> Add item to product list</a>
+
     <form id="newProductForm" action="/client/product" method="POST">
 
         <fieldset>
@@ -99,7 +64,7 @@
               </select></td>
             </tr>
           </table>
-        <input id="saveInfo" type="submit" value="Save"><button id="cancel" type="reset">Cancel</button><p id="savedMessage"></p>
+        <button>Save</button><button id="done" type="reset">Done</button>
       </fieldset>
     </form>
     <section id="myList">
@@ -108,7 +73,7 @@
         <tr>
           <th id="tableTitle" colspan="42"><h3>Product List</h3><input id="search" type="text" placeholder="Filter by Name"></input></th>
         </tr>
-
+        <a id="showItemForm" type="submit"> Add Product</a>
         <tr id="listHeaders">
           <th></th>
 
@@ -124,6 +89,7 @@
 
       <tbody id="listBody"></tbody>
     </table>
+    </section>
     </section>
   </body>
 </html>
