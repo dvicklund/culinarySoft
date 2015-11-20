@@ -14,9 +14,19 @@
     <script type="text/javascript" src="./login.js"></script>
     <script type="text/javascript" src="./signup.js"></script>
     <script>
-    $(function() {
-      
-    });
+      $(function() {
+        $('#signupFields').hide();
+
+        $('#newUser').click(function() {
+          $('#loginFields').slideUp('fast');
+          $('#signupFields').slideDown('normal');
+        });
+
+        $('#backToLogin').click(function() {
+          $('#signupFields').slideUp('normal');
+          $('#loginFields').slideDown('fast');
+        });
+      });
     </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
@@ -33,9 +43,10 @@
         <h4>Existing User Login</h4>
         <input class="loginBox" id="usernameInput" type="text" name="usernameInput" placeholder="Username">
         <input class="loginBox" id="passwordInput" type="password" name="passwordInput" placeholder="Password">
-        <a id="newUser">New User?</a>
+        <a id="newUser" href="#">New User?</a>
       </section>
       <section id="signupFields">
+        <a id="backToLogin" href="#">Back to Login</a>
         <h4>New User Signup</h4>
         <input class="loginBox" id="newFirstName" type="text" placeholder="First Name">
         <input class="loginBox" id="newLastName" type="text" placeholder="Last Name">

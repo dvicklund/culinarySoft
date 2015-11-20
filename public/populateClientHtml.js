@@ -15,7 +15,7 @@ $('#showItemForm').on('click', function() {
 });
 
 $('#done').on('click', function() {
-  $("#newProductForm").fadeOut()
+  $("#newProductForm").fadeOut('normal');
 });
 
 $.get("/vendor/product", function(data) {
