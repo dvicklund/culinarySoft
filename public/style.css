@@ -10,8 +10,6 @@ html {
 }
 
 body {
-  border-radius: 1em;
-  background-color: rgba(255,255,255,0.5);
   text-align: center;
 }
 
@@ -21,7 +19,8 @@ header {
 
 .buttonLink {
   padding: .5em;
-  color: black;
+  color: white;
+  background-color: #900;
 }
 
 fieldset {
@@ -30,6 +29,7 @@ fieldset {
 
 a {
   text-decoration: none;
+  color: #060;
 }
 
 a:hover {
@@ -69,7 +69,6 @@ section h1 {
 #showItemForm {
   text-align: center;
   font-size: 1.3em;
-  margin-left: 16em;
 }
 
 #done {
@@ -81,19 +80,25 @@ section h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
-  width: 35em;
   display: inline-block;
 }
 
-#formTable >> td {
+td > input {
+  width: 3em;
+}
+
+#formTable > tr {
   text-align: left;
+}
+
+#listDiv {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #listTable {
   padding: .5em;
   margin-left: auto;
   margin-right: auto;
-  width: 40em;
   background-color: rgba(0, 0, 0, 0.20);
 }
 
