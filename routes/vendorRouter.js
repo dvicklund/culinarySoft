@@ -7,6 +7,10 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 var jsonParser = bodyParser.json();
 var eatAuth = require(__dirname + "/../lib/eatAuth");
 
+// vendorRouter.get('/', function(req, res) {
+//   res.redirect('/../vendor.html');
+// });
+
 vendorRouter.get('/product', function(req, res) {
   Product.find({}, function(err, data) {
     if(err) return handleError(err, res);
@@ -14,7 +18,7 @@ vendorRouter.get('/product', function(req, res) {
   });
 });
 
-vendorRouter.post('/products', urlencodedParser, eatAuth, function(req, res) {
+vendorRouter.post('/products', urlencodedParser, function(req, res) {
   var query = {name: new RegExp(req.body.nameText, 'i')};
   Product.find(query, function(err, data) {
     if(err) handleError(err, res);

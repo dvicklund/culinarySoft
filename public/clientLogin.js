@@ -11,7 +11,7 @@ $(function() {
           authorization: "Basic " + btoa($('#usernameInput').val() + ":" + $('#passwordInput').val())
         }
       }).done(function(data) {
-        window.location.replace("/../vendor.html");
+        window.location.replace("/../client.html");
       }).fail(function(data) {
         
       });
