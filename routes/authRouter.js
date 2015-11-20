@@ -7,7 +7,7 @@ var urlencodedParser = require('body-parser').urlencoded({extended: false});
 
 var authRouter = module.exports = exports = express.Router();
 
-authRouter.post('/signup', urlencodedParser, function(req, res) {
+authRouter.post('/signup', jsonParser, function(req, res) {
   var user = new User();
   user.firstname = req.body.firstname;
   user.lastname = req.body.lastname;

@@ -83,9 +83,9 @@ describe('vendor router', function() {
         });
     });
 
-    it('should be able to remove a product', function() {
+    it('should be able to remove a product', function(done) {
       chai.request('localhost:3000')
-        .delete('vendor/product' + this.product._id)
+        .delete('/vendor/product' + this.product._id)
         .end(function(err, res) {
           expect(err).to.eql(null);
           done();
@@ -104,7 +104,7 @@ describe('authentication router', function() {
   it('should be able to add a user', function(done) {
     chai.request('localhost:3000')
       .post('/auth/signup')
-      .send({name: 'test user'})
+      .send({username: 'test user', password: 'password'})
       .end(function(err, res) {
         expect(err).to.eql(null);
         res.should.be.an('object');
