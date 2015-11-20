@@ -5,14 +5,6 @@
 
 html {
   height: 100%;
-<<<<<<< HEAD
-  background-image: url("/../static/8WC4QQ0MWC.jpg") ;
-  background-size: cover;
-}
-
-form {
-
-=======
   background: url("/../static/8WC4QQ0MWC.jpg") no-repeat left center fixed;
   background-size: cover;
 }
@@ -25,7 +17,6 @@ body {
 
 header {
   text-align: center;
->>>>>>> 3b6211dfbed524005c467ce5eea96faccc3e5149
 }
 
 .buttonLink {
@@ -87,22 +78,15 @@ section h1 {
 }
 
 #newProductForm {
-<<<<<<< HEAD
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
   width: 35em;
-=======
   display: inline-block;
 }
 
 #formTable >> td {
   text-align: left;
-}
-
-#listDiv {
-  background-color: rgba(255, 255, 255, 0.5);
->>>>>>> 3b6211dfbed524005c467ce5eea96faccc3e5149
 }
 
 #listTable {
@@ -134,7 +118,6 @@ section h1 {
   margin-bottom: 0;
 }
 
-<<<<<<< HEAD
 .loginBox {
   display: block;
   margin: 0 auto;
@@ -145,5 +128,3 @@ fieldset {
   position: relative; center;
   background-color: rgba(0, 0, 0, 0.20);
 }
-=======
->>>>>>> 3b6211dfbed524005c467ce5eea96faccc3e5149

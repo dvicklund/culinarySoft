@@ -35,45 +35,6 @@
     <!--TODO: Format the product form inline or prettier-->
 
     <form id="newProductForm" action="/vendor/product" method="POST">
-<<<<<<< HEAD
-        <fieldset>
-          <table id="formTable">
-            <tr>
-              <td><label for="name">Product Name</label></td>
-              <td><input id="newProductName" type="text" name="name"></td>
-            </tr>
-            <tr>
-              <td><label for="pricePerUnit">Price Per Unit</label></td>
-              <td><input id="newPricePerUnit" type="number" step="any" name="pricePerUnit"></td>
-            </tr>
-            <tr>
-              <td><label for="unit">Unit</label></td>
-              <td><select name="unit" id="unitSelect">
-                <optgroup label="By Weight">
-                  <option value="lb" selected>lb.</option>
-                  <option value="kg">kg.</option>
-                  <option value="oz">oz.</option>
-                  <option value="g">g.</option>
-                </optgroup>
-                <optgroup label="By Quantity">
-                  <option value="case">case</option>
-                  <option value="gross">gross</option>
-                  <option value="dozen">dozen</option>
-                  <option value="each">each</option>
-                </optgroup>
-              </select></td>
-            </tr>
-            <tr>
-              <td><label for="description">Description</label></td>
-              <td><input id="descriptionField" type="text" name="description"></td>
-            </tr>
-            <tr>
-              <td><label for="UPN">UPN</label></td>
-              <td><input id="UPN" type="text" name="UPN"></td>
-            </tr>
-          </table>
-        <button>Save</button><button id="done" type="reset">Done</button>
-=======
       <a id="done" href="#">&#10005;</a>
       <fieldset>
         <table id="formTable">
@@ -112,7 +73,6 @@
           </tr>
         </table>
         <input type="submit" value="Save"><p id="savedMessage"></p>
->>>>>>> 3b6211dfbed524005c467ce5eea96faccc3e5149
       </fieldset>
     </form>
     <table id="listTable">
