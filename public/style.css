@@ -1,11 +1,11 @@
 * {
-  color: darkblue; 
+  color: black;
 }
 
 html {
   height: 100%;
-  background: -prefix-linear-gradient(top, white, darkgrey); 
-  background: linear-gradient(to bottom, white, darkgrey);
+  background: -prefix-linear-gradient(top, white, orange);
+  background: linear-gradient(to bottom, white, orange);
   background-attachment: fixed;
 }
 
