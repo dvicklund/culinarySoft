@@ -22,16 +22,13 @@
     <header>
       <h1><a href="./index.html" class="buttonLink">CulinarySoft</a></h1>
       <h2>A leader for over 2 days</h2>
-      <nav>
-        <a href="">Add Product</a>
-      </nav>
+
     </header>
     <br>
 
     <!--TODO: Format the product form inline or prettier-->
 
     <form id="newProductForm" action="/vendor/product" method="POST">
-      <legend>Add a new product</legend>
         <fieldset>
           <table id="formTable">
             <tr>
@@ -68,21 +65,18 @@
               <td><input id="UPN" type="text" name="UPN"></td>
             </tr>
           </table>
-        <input type="submit" value="Save"><p id="savedMessage"></p>
+        <button>Save</button><button id="done" type="reset">Done</button>
       </fieldset>
     </form>
-    <section>
-      <form>
-        <input id="search" type="text" placeholder="Filter by Name"></input>
-      </form>
-    </section>
     <table id="listTable">
+    <a id="showItemForm" type="submit"> Add Product</a>
       <thead>
         <tr>
-          <th id="tableTitle" colspan="42"><h3>Product List</h3></th>
+          <th id="tableTitle" colspan="42">
+
+          <h3>Product List</h3><input id="search" type="text" placeholder="Filter by Name"></input></th>
         </tr>
         <tr id="listHeaders">
-          <th></th>
 
           <!--TODO: implement sorts here-->
 

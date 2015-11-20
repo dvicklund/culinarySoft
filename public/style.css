@@ -2,16 +2,20 @@
   color: black;
 }
 
+
 html {
   height: 100%;
   background-image: url("/../static/8WC4QQ0MWC.jpg") ;
-  background-size: 100%;
+  background-size: cover;
+}
+
+form {
+
 }
 
 .buttonLink {
-  padding: 10px 15px;
-  background-color: #4479BA;
-  color: #FFF;
+  padding: .5em;
+  color: black;
 }
 
 a {
@@ -30,17 +34,39 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
 section h1 {
   font-size: 2em;
   margin-bottom: -3%;
+
+}
+
+#showItemForm {
+  text-align: center;
+  font-size: 1.3em;
+  margin-left: 16em;
 }
 
 #newProductForm {
-  width: 90;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  width: 35em;
 }
 
 #listTable {
-  width: 100%;
+  padding: .5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40em;
+  background-color: rgba(0, 0, 0, 0.20);
 }
 
 #listBody td:nth-child(3) {
@@ -56,7 +82,7 @@ section h1 {
 }
 
 #listHeaders th:nth-child(4) {
-  text-align: left;
+  text-align: right;
 }
 
 #tableTitle h3 {
@@ -66,4 +92,10 @@ section h1 {
 .loginBox {
   display: block;
   margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+  position: relative; center;
+  background-color: rgba(0, 0, 0, 0.20);
 }
