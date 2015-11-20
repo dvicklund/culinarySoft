@@ -23,11 +23,14 @@ a:hover {
 }
 
 #splitLogin {
+  padding: 0 1em;
   text-align: center;
   position: fixed;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 1em;
+  background-color: rgba(255,255,255,0.5);
 }
 
 section h1 {
