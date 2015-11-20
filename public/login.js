@@ -4,14 +4,14 @@ $(function() {
 
   $('#passwordInput').keypress(function(e) {
     if(e.which == 13) {
-      console.log("attempting signin with username: " + $('#usernameInput').val() + " and password: " + $('#passwordInput').val());
-      $.ajax({
-        method: 'GET',
-        url: '/auth/signin', 
-        headers: {
-          authorization: "Basic " + btoa($('#usernameInput').val() + ":" + $('#passwordInput').val())
-        }
-      });
+      window.location.replace("/../vendor.html");
+      // $.ajax({
+      //   method: 'GET',
+      //   url: '/vendor/', 
+      //   headers: {
+      //     authorization: "Basic " + btoa($('#usernameInput').val() + ":" + $('#passwordInput').val())
+      //   }
+      // });
     }
   });
 });
