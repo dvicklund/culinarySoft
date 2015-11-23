@@ -32,7 +32,7 @@ $.get("/vendor/product", function(data) {
     // Loop through each product to fill <td>s
     for(var j = 1; j < Object.keys(curr).length - 1; j++) {
                                       // Here, using the 'numeral' library to format 2nd column as currency
-      j === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('0') + ' /</td>'
+      j === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[j]])).format('$0,00.00') + ' |</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[j]] + '</td>';
     }
     htmlString += '</tr>';
@@ -48,7 +48,7 @@ var displayList = function(data) {
   data.forEach(function(curr) {
     htmlString += '<tr id="' + curr._id + '"><td><input type="number" class="orderNumber"></input></td>';
     for(var i = 1; i < Object.keys(curr).length - 1; i++) {
-      i === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])) + ' /</td>'
+      i === 2 ? htmlString += '<td>' + numeral(Number(curr[Object.keys(curr)[i]])).format('$0,00.00') + ' |</td>'
               : htmlString += '<td>' + curr[Object.keys(curr)[i]] + '</td>';
     }
     htmlString += '</tr>';

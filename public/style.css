@@ -72,7 +72,7 @@ h2 {
 }
 
 section h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: -3%;
 
 }
@@ -103,6 +103,7 @@ section h1 {
 }
 
 #listTable {
+  width: 40em;
   padding: .5em;
   margin-left: auto;
   margin-right: auto;
@@ -122,17 +123,26 @@ section h1 {
 }
 
 #listHeaders th:nth-child(4) {
-  text-align: right;
+  text-align: left;
+}
+
+#listHeaders {
+
 }
 
 #tableTitle h3 {
   border-bottom: 1px dotted black;
   margin-bottom: 0;
+  padding: 1em;
 }
 
 .loginBox {
   display: block;
   margin: 0 auto;
+}
+
+td{
+  padding: .5em;
 }
 
 fieldset {
