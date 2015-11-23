@@ -19,7 +19,6 @@ header {
 }
 
 .indexbuttonLink {
-  margin: auto;
   padding: 0.3em;
   color: #eeeeee;
   font-size: 1.3em;
@@ -47,14 +46,14 @@ a:hover {
 }
 
 #splitLogin {
-  padding: 0 1em;
+  padding: 0 1em 1em 1em;
   text-align: center;
   position: fixed;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1em;
-
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .loginBox {
