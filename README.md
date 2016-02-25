@@ -3,7 +3,7 @@
 # culinarySoft
 CulinarySoft is an open-source web application that lets culinary vendors and restaurant managers to streamline the ordering process.
 
-This project is currently a working prototype that has been deployed to Heroku. To view the app, please follow this [link](https://culinarysoft.herokuapp.com/). To simulate a vendor, click the vendor button, create a login and then hit enter. From there, feel free to add, remove, and filter products!
+This project is currently a working prototype that has been deployed to Heroku. To view the app, please follow this [link](https://culinarysoft.herokuapp.com/). To simulate a vendor, click the vendor button, click 'New User?', and then register a login. From there, feel free to add, remove, and filter products!
 
 ### Core Contributors
 

@@ -60,6 +60,14 @@ a:hover {
   margin: 0 auto;
 }
 
+#loginButton, #registerButton, #newUser {
+  width: 100px;
+  color: green;
+  background: white;
+  display: block;
+  margin: 1em auto;
+}
+
 h1 {
   text-align: center;
 
@@ -77,9 +85,13 @@ section h1 {
 }
 
 #showItemForm {
+  margin: 0 auto;
   text-align: center;
   font-size: 1.3em;
   font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  display: block;
 }
 
 #done {
@@ -88,10 +100,11 @@ section h1 {
 }
 
 #newProductForm {
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
-  display: inline-block;
+  display: block;
 }
 
 .orderNumber {
