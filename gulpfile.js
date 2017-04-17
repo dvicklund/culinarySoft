@@ -44,7 +44,7 @@ gulp.task('mocha:test', function(){
   return gulp.src(files.test)
     .pipe(mocha({
       reporter: 'nyan'
-    }));
+    })).once('end', function () { process.exit()});
 });
 
 gulp.task('watch:html', function() {
