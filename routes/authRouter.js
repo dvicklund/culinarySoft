@@ -18,8 +18,6 @@ authRouter.post('/signup', urlencodedParser, function(req, res) {
   user.hashPassword(req.body.password);
   console.log("User object created, saving...");
 
-  debugger;
-
   user.save(function(err, data) {
     console.log('Checking errors...');
     if (err) return handleError(err, res);

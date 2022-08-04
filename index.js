@@ -10,7 +10,8 @@ var authRouter = require(__dirname + "/routes/authRouter");
 process.env.APP_SECRET = process.env.APP_SECRET || 'changemechangemechangeme';
 
 console.log('Connecting to mongodb...');
-mongoose.connect(process.env.MONGOLAB_URI+"/productdb" || "mongodb://localhost/productdb");
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/productdb");
+mongoose.Promise = global.Promise;
 console.log('Connected to mongodb');
 
 app.use(express.static('public'));
