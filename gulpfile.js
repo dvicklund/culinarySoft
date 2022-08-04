@@ -47,13 +47,13 @@ gulp.task('mocha:test', function(){
     }));
 });
 
-gulp.task('watch:html', function() {
-  gulp.watch(files.html, []);
-});
-gulp.task('watch:css', function() {});
-gulp.task('watch:js', function() {});
+// gulp.task('watch:html', function() {
+//   gulp.watch(files.html, []);
+// });
+// gulp.task('watch:css', function() {});
+// gulp.task('watch:js', function() {});
 
-gulp.task('watch', []);
+// gulp.task('watch', []);
 gulp.task('jshint', ['jshint:test', 'jshint:app']);
 gulp.task('mocha', ['mocha:test']);
 gulp.task('default', ['jshint', 'mocha:test']);
