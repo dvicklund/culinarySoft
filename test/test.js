@@ -1,9 +1,10 @@
+require('dotenv').config();
 var chai = require('chai');
 var chaihttp = require('chai-http');
 var mongoose = require('mongoose');
 var Product = require(__dirname + '/../models/productModel');
 
-process.env.MONGOLAB_URI = "mongodb://localhost/testproductdb";
+process.env.MONGOLAB_URI = process.env.MONGOLAB_URI+"/testproductdb" || "mongodb://localhost/testproductdb";
 var server = require(__dirname + '/../index');
 
 var expect = chai.expect;

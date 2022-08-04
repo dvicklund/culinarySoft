@@ -8,6 +8,7 @@ var urlencodedParser = require('body-parser').urlencoded({extended: false});
 var authRouter = module.exports = exports = express.Router();
 
 authRouter.post('/signup', urlencodedParser, function(req, res) {
+  console.log("Creating new user...");
   var user = new User();
   user.firstname = req.body.firstname;
   user.lastname = req.body.lastname;
@@ -15,13 +16,20 @@ authRouter.post('/signup', urlencodedParser, function(req, res) {
   user.auth.basic.username = req.body.username;
   user.username = req.body.username;
   user.hashPassword(req.body.password);
+  console.log("User object created, saving...");
+
+  debugger;
 
   user.save(function(err, data) {
+    console.log('Checking errors...');
     if (err) return handleError(err, res);
+    console.log("User saved, generating token...");
     user.generateToken(function(err, token) {
       if (err) return handleError(err, res);
 
-      res.json({token: token});
+      console.log("User successfully created");
+      
+      return res.status(200).json({token: token});
     });
   });
 });

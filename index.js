@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
@@ -7,7 +9,9 @@ var authRouter = require(__dirname + "/routes/authRouter");
 
 process.env.APP_SECRET = process.env.APP_SECRET || 'changemechangemechangeme';
 
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/productdb");
+console.log('Connecting to mongodb...');
+mongoose.connect(process.env.MONGOLAB_URI+"/productdb" || "mongodb://localhost/productdb");
+console.log('Connected to mongodb');
 
 app.use(express.static('public'));
 app.use('/client', clientRouter);
